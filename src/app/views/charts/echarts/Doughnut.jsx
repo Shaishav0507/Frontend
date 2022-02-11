@@ -81,13 +81,12 @@ const DoughnutChart = ({ height, color = [] }) => {
                 data: [
                     {
                         value: 65,
-                        name: 'Google',
+                        name: 'Send Invoices',
                     },
                     {
                         value: 20,
-                        name: 'Facebook',
+                        name: 'GST Return',
                     },
-                    { value: 15, name: 'Others' },
                 ],
                 itemStyle: {
                     emphasis: {

@@ -68,7 +68,7 @@ const TopSellingTable = () => {
     return (
         <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
             <CardHeader>
-                <Title>top selling products</Title>
+                <Title>Activities Done</Title>
                 <Select size="small" defaultValue="this_month">
                     <MenuItem value="this_month">This Month</MenuItem>
                     <MenuItem value="last_month">Last Month</MenuItem>
@@ -79,15 +79,15 @@ const TopSellingTable = () => {
                     <TableHead>
                         <TableRow>
                             <TableCell sx={{ px: 3 }} colSpan={4}>
-                                Name
+                                Activity
                             </TableCell>
                             <TableCell sx={{ px: 0 }} colSpan={2}>
                                 Revenue
                             </TableCell>
                             <TableCell sx={{ px: 0 }} colSpan={2}>
-                                Stock Status
+                                Status
                             </TableCell>
-                            <TableCell sx={{ px: 0 }} colSpan={1}>
+                            <TableCell sx={{ px: 0 }} colSpan={2}>
                                 Action
                             </TableCell>
                         </TableRow>
@@ -127,16 +127,16 @@ const TopSellingTable = () => {
                                     {product.available ? (
                                         product.available < 20 ? (
                                             <Small bgcolor={bgSecondary}>
-                                                {product.available} available
+                                                {product.available} Pending
                                             </Small>
                                         ) : (
                                             <Small bgcolor={bgPrimary}>
-                                                in stock
+                                                Done
                                             </Small>
                                         )
                                     ) : (
                                         <Small bgcolor={bgError}>
-                                            out of stock
+                                            Failed
                                         </Small>
                                     )}
                                 </TableCell>
@@ -157,33 +157,33 @@ const TopSellingTable = () => {
 const productList = [
     {
         imgUrl: '/assets/images/products/headphone-2.jpg',
-        name: 'earphone',
-        price: 100,
+        name: 'GST Filed',
+        price: 1000,
         available: 15,
     },
     {
         imgUrl: '/assets/images/products/headphone-3.jpg',
-        name: 'earphone',
+        name: 'Invoice Sent',
         price: 1500,
         available: 30,
     },
     {
         imgUrl: '/assets/images/products/iphone-2.jpg',
-        name: 'iPhone x',
+        name: 'Invoice Sent',
         price: 1900,
         available: 35,
     },
     {
         imgUrl: '/assets/images/products/iphone-1.jpg',
-        name: 'iPhone x',
+        name: 'Invoice Sent',
         price: 100,
         available: 0,
     },
     {
         imgUrl: '/assets/images/products/headphone-3.jpg',
-        name: 'Head phone',
+        name: 'GST Filed',
         price: 1190,
-        available: 5,
+        available: 0,
     },
 ]
 

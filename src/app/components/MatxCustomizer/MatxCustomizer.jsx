@@ -8,7 +8,6 @@ import { themeShadows } from '../MatxTheme/themeColors'
 import {
     Icon,
     Card,
-    Link,
     Button,
     Drawer,
     Tooltip,
@@ -146,13 +145,6 @@ const MatxCustomizer = () => {
                             >
                                 Demos
                             </Button>
-                            <Button
-                                variant="outlined"
-                                color={tabIndex === 1 ? 'secondary' : 'primary'}
-                                onClick={() => handleTabChange(1)}
-                            >
-                                Settings
-                            </Button>
                         </Box>
 
                         <StyledScrollBar options={{ suppressScrollX: true }}>
@@ -207,16 +199,7 @@ const MatxCustomizer = () => {
                             {/* END LAYOUT */}
                             {tabIndex === 1 && (
                                 <div>
-                                    <div className="helpText">
-                                        We used React context API to control
-                                        layout. Check out the{' '}
-                                        <Link
-                                            href="http://demos.ui-lib.com/matx-react-doc/layout.html"
-                                            target="_blank"
-                                        >
-                                            Documentation
-                                        </Link>
-                                    </div>
+                                    
                                 </div>
                             )}
                         </StyledScrollBar>

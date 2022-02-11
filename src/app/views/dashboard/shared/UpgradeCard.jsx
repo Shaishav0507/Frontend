@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button } from '@mui/material'
+import { Card } from '@mui/material'
 import { styled } from '@mui/system'
 import { convertHexToRGB } from 'utils'
 
@@ -13,12 +13,12 @@ const CardRoot = styled(Card)(({ theme }) => ({
 
 const StyledCard = styled(Card)(({ theme }) => ({
     boxShadow: 'none',
-    textAlign: 'center',
+    textAlign: 'left',
     position: 'relative',
     background: `rgb(${convertHexToRGB(
         theme.palette.primary.main
     )}, 0.15) !important`,
-    padding: '24px !important',
+    padding: '18px !important',
     [theme.breakpoints.down('sm')]: {
         padding: '16px !important',
     },
@@ -26,30 +26,22 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 const Paragraph = styled('p')(({ theme }) => ({
     margin: 0,
-    paddingTop: '24px',
-    paddingBottom: '24px',
+    paddingTop: '5px',
+    paddingBottom: '5px',
+    alignItems: 'left   ',
     color: theme.palette.text.secondary,
 }))
 
 const UpgradeCard = () => {
     return (
         <CardRoot>
+            <h1>
+                    THINGS YOU CAN DO
+            </h1>
             <StyledCard elevation={0}>
-                <img
-                    src="/assets/images/illustrations/upgrade.svg"
-                    alt="upgrade"
-                />
-                <Paragraph>
-                    Upgrade to <b>MatX PRO</b> for <br /> more resources
+                <Paragraph style={{fontWeight: 'bold', fontSize: '20px'}}>
+                    Add a Customer. <br /> Add a Invoice. <br/> Customize your Invoices. <br/> Invite a guest collaborator.
                 </Paragraph>
-                <Button
-                    size="large"
-                    color="primary"
-                    variant="contained"
-                    sx={{ textTransform: 'uppercase' }}
-                >
-                    upgrade now
-                </Button>
             </StyledCard>
         </CardRoot>
     )

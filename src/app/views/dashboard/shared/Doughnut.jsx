@@ -8,12 +8,12 @@ const DoughnutChart = ({ height, color = [] }) => {
     const option = {
         legend: {
             show: true,
-            itemGap: 20,
+            itemGap: 40,
             icon: 'circle',
             bottom: 0,
             textStyle: {
                 color: theme.palette.text.secondary,
-                fontSize: 13,
+                fontSize: 16,
                 fontFamily: 'roboto',
             },
         },
@@ -81,13 +81,12 @@ const DoughnutChart = ({ height, color = [] }) => {
                 data: [
                     {
                         value: 65,
-                        name: 'Google',
+                        name: 'Invoices Sent',
                     },
                     {
                         value: 20,
-                        name: 'Facebook',
+                        name: 'GST Return',
                     },
-                    { value: 15, name: 'Others' },
                 ],
                 itemStyle: {
                     emphasis: {

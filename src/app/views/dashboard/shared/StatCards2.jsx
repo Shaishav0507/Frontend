@@ -80,7 +80,7 @@ const StatCards2 = () => {
                         >
                             <Icon sx={{ color: textError }}>star_outline</Icon>
                         </FabIcon>
-                        <H3 textcolor={textError}>Transactions</H3>
+                        <H3 textcolor={textError}>Transactions Done</H3>
                     </ContentBox>
                     <ContentBox sx={{ pt: 2 }}>
                         <H1>$2.8M</H1>

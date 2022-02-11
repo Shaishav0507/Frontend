@@ -24,7 +24,7 @@ const MatxProgressBar = ({
             spacing={spacing}
             alignItems="center"
         >
-            <Grid item xs={text ? 8 : 12}>
+            <Grid item xs={text ? 7 : 12}>
                 <CustomLinearProgress
                     color={color}
                     value={value}
@@ -32,7 +32,7 @@ const MatxProgressBar = ({
                 ></CustomLinearProgress>
             </Grid>
             {text !== '' && (
-                <Grid item xs={text ? 4 : false}>
+                <Grid item xs={text ? 5 : false}>
                     <Typography color={color}>
                         <Small sx={{ color: coloredText ? '' : secondary }}>
                             {text}
