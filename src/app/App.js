@@ -17,6 +17,8 @@ import ResetPasswordConfirm from './containers/ResetPasswordConfirm'
 
 import Layout from './hocs/Layout'
 import store from './store'
+import GetStarted1 from './containers/GetStarted1'
+import GetStarted2 from './containers/GetStarted2'
 
 const App = () => {
     // const all_pages = useRoutes(AllPages())
@@ -29,9 +31,31 @@ const App = () => {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={Signup} />
-                        <Route exact path="/reset-password" component={ResetPassword} />
-                        <Route exact path="/password/reset/confirm/:uid/:token" component={ResetPasswordConfirm} /> 
-                        <Route exact path="/activate/:uid/:token" component={Activate} />
+                        <Route
+                            exact
+                            path="/launchpad"
+                            component={GetStarted1}
+                        />
+                        <Route
+                            exact
+                            path="/onboarding"
+                            component={GetStarted2}
+                        />
+                        <Route
+                            exact
+                            path="/reset-password"
+                            component={ResetPassword}
+                        />
+                        <Route
+                            exact
+                            path="/password/reset/confirm/:uid/:token"
+                            component={ResetPasswordConfirm}
+                        />
+                        <Route
+                            exact
+                            path="/activate/:uid/:token"
+                            component={Activate}
+                        />
                         {/* <SettingsProvider>
                             <MatxTheme>
                                 <AuthProvider>{all_pages}</AuthProvider>

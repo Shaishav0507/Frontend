@@ -18,7 +18,7 @@ const Home = () => (
             <p class="lead">Send an Invoice or File GST Return.</p>
             <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Link class="btn btn-primary btn-lg" to="/login" role="button">
+            <Link class="btn btn-primary btn-lg" to="/launchpad" role="button">
                 Login
             </Link>
         </div>
