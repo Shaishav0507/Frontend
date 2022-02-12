@@ -27,10 +27,7 @@ const TopbarMenu = (props) => {
                 </IconButton>
             </Hidden>
 
-            <ContentBox
-                style={{ top: offsetTop }}
-                className="menu-area"
-            >
+            <ContentBox style={{ top: offsetTop }} className="menu-area">
                 {props.children}
             </ContentBox>
         </div>

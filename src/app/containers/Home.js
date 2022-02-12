@@ -1,16 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import LOGO from './logo.png'
 
+const Logo = styled.img`
+    height: 20vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+`
 const Home = () => (
-    <div className='container'>
-        <div class='jumbotron mt-5'>
-            <h1 class='display-4'>Welcome to TaxRx</h1>
-            <p class='lead'>Send an Invoice or File GST Return.</p>
-            <hr class='my-4' />
+    <div className="container">
+        <Logo src={LOGO} />
+
+        <div class="jumbotron vw-10 p-5 mt-3 d-flex flex-column align-items-center justify-content-center">
+            <h1 class="display-3">Welcome to TaxRx</h1>
+            <p class="lead">Send an Invoice or File GST Return.</p>
+            <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Link class='btn btn-primary btn-lg' to='/login' role='button'>Login</Link>
+            <Link class="btn btn-primary btn-lg" to="/login" role="button">
+                Login
+            </Link>
         </div>
     </div>
-);
+)
 
-export default Home;
+export default Home
