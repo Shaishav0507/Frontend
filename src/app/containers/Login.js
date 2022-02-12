@@ -55,6 +55,9 @@ const Login = ({ login, isAuthenticated }) => {
                 <button className="btn btn-primary" type="submit">
                     Login
                 </button>
+                <Link class="btn btn-primary btn-lg" to="/launchpad" role="button">
+                    LaunchPad
+                </Link>
             </form>
             <p className="mt-3">
                 Don't have an account? <Link to="/signup">Sign Up</Link>

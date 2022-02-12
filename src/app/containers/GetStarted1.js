@@ -33,8 +33,8 @@ const GetStarted1 = () => {
     const { fname, lname, buss, slec3, slec1, slec2 } = formData
     return (
         <Conatainer>
-            <h1>Welcome to TAXRX!</h1>
-            <p>Tell us about you and your bussiness</p>
+            <h1>Welcome to TAxRx!</h1>
+            <p>Send the Invoice or File GST Return</p>
             <form onSubmit={(e) => onSubmit(e)}>
                 <div className="form-group d-flex">
                     <input
