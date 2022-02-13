@@ -44,10 +44,12 @@ const GetStarted1 = () => {
                 alt="Tax_Image"
                 style={{
                     float: 'right',
-                    width: '550px',
-                    height: '400px',
-                    marginTop: '70px',
-                    marginRight: '70px',
+                    width: '500px',
+                    height: '450px',
+                    marginTop: '40px',
+                    marginRight: '90px',
+                    borderRadius: '50px 50px',
+                    opacity: '0.6',
                 }}
             />
             <h1>Welcome to TaxRx !!</h1>
