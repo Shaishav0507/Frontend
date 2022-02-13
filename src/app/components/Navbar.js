@@ -10,7 +10,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
         logout()
         setRedirect(true)
     }
-
+    // eslint-disable-next-line
     const guestLinks = () => (
         <Fragment>
             <li className="nav-item">
@@ -25,7 +25,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
             </li>
         </Fragment>
     )
-
+        // eslint-disable-next-line
     const authLinks = () => (
         <li className="nav-item">
             <a className="nav-link" href="#!" onClick={logout_user}>

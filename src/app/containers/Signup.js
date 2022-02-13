@@ -120,7 +120,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                 </button>
             </form>
             <p className="mt-3 d-flex align-items-center justify-content-center">
-                Already have an account? <Link to="/login">Sign In</Link>
+                Already have an account?<Link to="/login"> Sign In</Link>
             </p>
         </div>
     )

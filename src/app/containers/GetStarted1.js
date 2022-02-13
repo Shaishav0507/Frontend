@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+// import GetStarted2 from './GetStarted2'
+import Tax from './tax.jpg'
 
 import styled from 'styled-components'
 
@@ -7,8 +9,8 @@ const Conatainer = styled.div`
     background: linear-gradient(
         to right,
         #ffffff 0%,
-        #ffffff 50%,
-        #8080ff 50%,
+        #ffffff 35%,
+        #8080ff 65%,
         #ff66ff 100%
     );
     height: 100vh;
@@ -37,13 +39,14 @@ const GetStarted1 = () => {
     const { fname, lname, buss, slec3, slec1, slec2 } = formData
     return (
         <Conatainer>
-            <h1>Welcome to TAXRX!</h1>
-            <p>Tell us about you and your bussiness</p>
+            <img src={Tax} alt="Tax_Image"  style={{ float: 'right', width: '550px', height: '400px', marginTop: '70px', marginRight: '70px'}}/>
+            <h1>Welcome to TaxRx !!</h1>
+            <p>Send the Invoice or File GST Return</p>
             <form onSubmit={(e) => onSubmit(e)}>
                 <div className="form-group d-flex">
                     <input
                         className="  form-control"
-                        style={{ width: '200px' }}
+                        style={{ width: '190px', marginRight: '20px', borderRadius: '15px' }}
                         type="text"
                         placeholder="First Name"
                         name="fname"
@@ -53,7 +56,7 @@ const GetStarted1 = () => {
                     />
                     <input
                         className=" form-control"
-                        style={{ width: '200px' }}
+                        style={{ width: '190px' , borderRadius: '15px' }}
                         type="text"
                         placeholder="Last Name"
                         name="lname"
@@ -66,7 +69,7 @@ const GetStarted1 = () => {
                     What's your bussiness name?
                     <input
                         className="  form-control"
-                        style={{ width: '400px' }}
+                        style={{ width: '400px', borderRadius: '15px' }}
                         type="text"
                         placeholder="Bussiness!"
                         name="buss"
@@ -78,9 +81,9 @@ const GetStarted1 = () => {
                 <div className="form-group d-flex flex-column">
                     What's your bussiness do?
                     <select
-                        class="form-select form-select-lg mb-3 p-2"
+                        class="form-select form-select-lg mb-2 p-2"
                         aria-label="form-select-lg example"
-                        style={{ width: '400px' }}
+                        style={{ width: '400px', borderRadius: '15px' }}
                         name="slec1"
                         value={slec1}
                         onChange={(e) => onChange(e)}
@@ -96,9 +99,9 @@ const GetStarted1 = () => {
                 <div className="form-group d-flex flex-column">
                     Bussiness Country
                     <select
-                        class="form-select form-select-lg mb-3 p-2"
+                        class="form-select form-select-lg mb-2 p-2"
                         aria-label="form-select-lg example"
-                        style={{ width: '400px' }}
+                        style={{ width: '400px', borderRadius: '15px' }}
                         name="slec2"
                         value={slec2}
                     >
@@ -115,7 +118,7 @@ const GetStarted1 = () => {
                     <select
                         class="form-select form-select-lg mb-3 p-2"
                         aria-label="form-select-lg example"
-                        style={{ width: '400px' }}
+                        style={{ width: '400px', borderRadius: '15px' }}
                         name="slec3"
                         value={slec3}
                     >
@@ -127,12 +130,13 @@ const GetStarted1 = () => {
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <button className="btn btn-primary" type="submit">
-                    <Link to="/onboarding" style={{ color: 'white' }}>
+                <button className="btn btn-primary" type="submit" style={{ borderRadius: '25px', width: '15%', marginLeft: '80px' }}>
+                    <Link to="/onboarding" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'None' }}>
                         Next
                     </Link>
                 </button>
             </form>
+            {/* <GetStarted2 name={fname} /> */}
         </Conatainer>
     )
 }

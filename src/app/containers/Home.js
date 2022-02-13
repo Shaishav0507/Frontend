@@ -11,14 +11,14 @@ const Logo = styled.img`
 `
 const Home = () => (
     <div className="container">
-        <Logo src={LOGO} />
+        <Logo src={LOGO} style={{'width': '300px', 'height': '200px'}} />
 
-        <div class="jumbotron vw-10 p-5 mt-3 d-flex flex-column align-items-center justify-content-center">
+        <div class="jumbotron vw-50 p-5 mt-3 d-flex flex-column align-items-center justify-content-center" style={{ background: 'white' }}>
             <h1 class="display-3">Welcome to TaxRx</h1>
             <p class="lead">Send an Invoice or File GST Return.</p>
             <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Link class="btn btn-primary btn-lg" to="/launchpad" role="button">
+            <Link class="btn btn-primary btn-lg" to="/login" role="button">
                 Login
             </Link>
         </div>

@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
@@ -9,8 +9,8 @@ const Conatainer = styled.div`
     background: linear-gradient(
         to right,
         #ffffff 0%,
-        #ffffff 50%,
-        #8080ff 50%,
+        #ffffff 35%,
+        #8080ff 65%,
         #ff66ff 100%
     );
     height: 100vh;
@@ -21,6 +21,10 @@ const Conatainer = styled.div`
         justify-content: space-between;
         text-decoration: none;
         background-color: white;
+        border-radius: 30px;
+    }
+    .butt:hover {
+        background: #ccffff;
     }
 `
 const Left = styled.div`
@@ -50,30 +54,31 @@ const Wrapper = styled.div`
     justify-content: space-between;
 `
 
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>
-}
+// function Welcome(props) {
+//      return <h1>Hello, {props.name}</h1>
+// }
 
-const GetStarted2 = () => {
+const GetStarted2 = (props) => {
     return (
         <Conatainer>
             <Wrapper>
                 <Left>
-                    <div>
+                    {/* <div>
                         <Welcome name="helol" />
-                    </div>
-                    <h2 style={{}}>{/* <b>Hey {props.fname}!</b> */}</h2>
-                    <p>What would you link to do in TAXRX?</p>
+                    </div> */}
+                    <h2>Hello, {props.children} </h2>
+                    <p style={{ 'fontSize': '30px', 'marginTop': '50px'}}>What would you link to do in TaxRx?</p>
                 </Left>
                 <Right>
-                    <h2 style={{ color: 'whitesmoke', marginBottom: '20px' }}>
+                    <h2 style={{ color: 'whitesmoke', 'fontSize': '50px', marginBottom: '40px' }}>
                         Choose a starting point{' '}
                     </h2>
-                    <p style={{ color: 'whitesmoke', marginBottom: '20px' }}>
+                    <p style={{ color: 'whitesmoke', 'fontSize': '30px', marginBottom: '40px' }}>
                         You can do more later
                     </p>
                     <SearchContainer>
                         <Button
+                            style={{ outline: 'None' }}
                             className="butt"
                             variant="outlined"
                             startIcon={
@@ -82,9 +87,10 @@ const GetStarted2 = () => {
                                         color: 'white',
                                         display: 'block',
                                         height: '40px',
-                                        width: '40px',
+                                        width: '50px',
+                                        marginRight: '10px',
                                         'border-radius': '50%',
-                                        border: '1px solid blue',
+                                        border: '8px solid blue',
                                         backgroundColor: 'blue',
                                     }}
                                 />
@@ -93,19 +99,21 @@ const GetStarted2 = () => {
                                 <ArrowForwardIosIcon
                                     style={{
                                         color: 'blue',
-
+                                        position: 'relative',
+                                        left: '20px',
                                         display: 'block',
                                         height: '20px',
-                                        width: '20px',
+                                        width: '110px',
                                     }}
                                 />
                             }
                         >
-                            <Link to="/">Send Professional invoices</Link>
-                        </Button>
+                            <Link to="/" style={{textDecoration: 'None'}}>Send Invoices</Link>
+                    </Button>
                     </SearchContainer>
                     <SearchContainer>
                         <Button
+                            style={{ outline: 'None', marginTop: '20px' }}
                             className="butt"
                             variant="outlined"
                             startIcon={
@@ -115,9 +123,10 @@ const GetStarted2 = () => {
 
                                         display: 'block',
                                         height: '40px',
-                                        width: '40px',
+                                        width: '50px',
+                                        marginRight: '10px',
                                         'border-radius': '50%',
-                                        border: '1px solid blue',
+                                        border: '8px solid blue',
                                         backgroundColor: 'blue',
                                     }}
                                 />
@@ -126,16 +135,17 @@ const GetStarted2 = () => {
                                 <ArrowForwardIosIcon
                                     style={{
                                         color: 'blue',
-
+                                        position: 'relative',
+                                        left: '15px',
                                         display: 'block',
                                         height: '20px',
-                                        width: '20px',
+                                        width: '100px',
                                     }}
                                 />
                             }
                         >
-                            <Link to="/dashboard">
-                                Send Professional invoices
+                            <Link to="/dashboard" style={{textDecoration: 'None'}}>
+                                File GST Return
                             </Link>
                         </Button>
                     </SearchContainer>
