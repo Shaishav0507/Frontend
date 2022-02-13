@@ -23,7 +23,11 @@ const GetStarted1 = () => {
 
     const [formData, setFormData] = useState({
         fname: '',
-        password: '',
+        lname: '',
+        buss: '',
+        slec1: '',
+        slec2: '',
+        slec3: '',
     })
 
     const onSubmit = (e) => {
