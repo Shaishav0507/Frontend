@@ -67,13 +67,27 @@ const GetStarted2 = (props) => {
                         <Welcome name="helol" />
                     </div> */}
                     <h2>Hello, {props.children} </h2>
-                    <p style={{ 'fontSize': '30px', 'marginTop': '50px'}}>What would you link to do in TaxRx?</p>
+                    <p style={{ fontSize: '22px', marginTop: '50px' }}>
+                        What would you link to do in TaxRx?
+                    </p>
                 </Left>
                 <Right>
-                    <h2 style={{ color: 'whitesmoke', 'fontSize': '50px', marginBottom: '40px' }}>
+                    <h2
+                        style={{
+                            color: 'whitesmoke',
+                            fontSize: '50px',
+                            marginBottom: '40px',
+                        }}
+                    >
                         Choose a starting point{' '}
                     </h2>
-                    <p style={{ color: 'whitesmoke', 'fontSize': '30px', marginBottom: '40px' }}>
+                    <p
+                        style={{
+                            color: 'whitesmoke',
+                            fontSize: '30px',
+                            marginBottom: '40px',
+                        }}
+                    >
                         You can do more later
                     </p>
                     <SearchContainer>
@@ -108,8 +122,10 @@ const GetStarted2 = (props) => {
                                 />
                             }
                         >
-                            <Link to="/" style={{textDecoration: 'None'}}>Send Invoices</Link>
-                    </Button>
+                            <Link to="/" style={{ textDecoration: 'None' }}>
+                                Send Invoices
+                            </Link>
+                        </Button>
                     </SearchContainer>
                     <SearchContainer>
                         <Button
@@ -144,7 +160,10 @@ const GetStarted2 = (props) => {
                                 />
                             }
                         >
-                            <Link to="/dashboard" style={{textDecoration: 'None'}}>
+                            <Link
+                                to="/dashboard"
+                                style={{ textDecoration: 'None' }}
+                            >
                                 File GST Return
                             </Link>
                         </Button>

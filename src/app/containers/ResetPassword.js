@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { reset_password } from '../actions/auth'
+import Logo from './Logo'
 
 const ResetPassword = ({ reset_password }) => {
     const [requestSent, setRequestSent] = useState(false)
@@ -26,23 +27,67 @@ const ResetPassword = ({ reset_password }) => {
     }
 
     return (
-        <div className="container mt-5">
-            <h1>Request Password Reset:</h1>
-            <form onSubmit={(e) => onSubmit(e)}>
-                <div className="form-group">
-                    <input
-                        className="form-control"
-                        type="email"
-                        placeholder="Email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => onChange(e)}
-                        required
-                    />
+        <div className="container mt-2 justify-content-center">
+            <Logo />
+            <div
+                className="forgot"
+                style={{
+                    backgroundColor: '#fff',
+                    padding: '12px',
+                    border: '1px solid #dfdfdf',
+                }}
+            >
+                <h2>Forgot your password?</h2>
+                <p>
+                    Change your password in three easy steps. This will help you
+                    to secure your password!
+                </p>
+                <ol class="list-unstyled mb-5">
+                    <li>
+                        <span class="text-primary text-medium">1. </span>Enter
+                        your email address below.
+                    </li>
+                    <li>
+                        <span class="text-primary text-medium">2. </span>Our
+                        system will send you a temporary link.
+                    </li>
+                    <li>
+                        <span class="text-primary text-medium">3. </span>Use the
+                        link to reset your password
+                    </li>
+                </ol>
+            </div>
+            <form onSubmit={(e) => onSubmit(e)} className="card mt-4">
+                <div class="card-body">
+                    <div className="  form-group">
+                        <label for="email-for-pass">
+                            Enter your email address
+                        </label>
+                        <input
+                            className="form-control outline: 0"
+                            type="email"
+                            placeholder="Email"
+                            name="email"
+                            value={email}
+                            onChange={(e) => onChange(e)}
+                            required
+                        />
+                        <small class="form-text text-muted">
+                            Enter the email address you used during the
+                            registration on Taxrx.com. Then we'll email a link
+                            to this address.
+                        </small>
+                    </div>
                 </div>
-                <button className="btn btn-primary" type="submit">
-                    Reset Password
-                </button>
+                <div class="card-footer">
+                    <button
+                        className="btn btn-primary btn-block"
+                        style={{ width: '230px', borderRadius: '50px 50px' }}
+                        type="submit"
+                    >
+                        Reset Password
+                    </button>
+                </div>
             </form>
         </div>
     )

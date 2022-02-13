@@ -39,14 +39,28 @@ const GetStarted1 = () => {
     const { fname, lname, buss, slec3, slec1, slec2 } = formData
     return (
         <Conatainer>
-            <img src={Tax} alt="Tax_Image"  style={{ float: 'right', width: '550px', height: '400px', marginTop: '70px', marginRight: '70px'}}/>
+            <img
+                src={Tax}
+                alt="Tax_Image"
+                style={{
+                    float: 'right',
+                    width: '550px',
+                    height: '400px',
+                    marginTop: '70px',
+                    marginRight: '70px',
+                }}
+            />
             <h1>Welcome to TaxRx !!</h1>
             <p>Send the Invoice or File GST Return</p>
             <form onSubmit={(e) => onSubmit(e)}>
                 <div className="form-group d-flex">
                     <input
                         className="  form-control"
-                        style={{ width: '190px', marginRight: '20px', borderRadius: '15px' }}
+                        style={{
+                            width: '190px',
+                            marginRight: '20px',
+                            borderRadius: '15px',
+                        }}
                         type="text"
                         placeholder="First Name"
                         name="fname"
@@ -56,7 +70,7 @@ const GetStarted1 = () => {
                     />
                     <input
                         className=" form-control"
-                        style={{ width: '190px' , borderRadius: '15px' }}
+                        style={{ width: '190px', borderRadius: '15px' }}
                         type="text"
                         placeholder="Last Name"
                         name="lname"
@@ -116,7 +130,7 @@ const GetStarted1 = () => {
                 <div className="form-group d-flex flex-column">
                     Bussiness Currency
                     <select
-                        class="form-select form-select-lg mb-3 p-2"
+                        class="form-select form-select-lg mb-3 p-2 "
                         aria-label="form-select-lg example"
                         style={{ width: '400px', borderRadius: '15px' }}
                         name="slec3"
@@ -130,8 +144,22 @@ const GetStarted1 = () => {
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <button className="btn btn-primary" type="submit" style={{ borderRadius: '25px', width: '15%', marginLeft: '80px' }}>
-                    <Link to="/onboarding" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'None' }}>
+                <button
+                    className="btn btn-primary "
+                    type="submit"
+                    style={{
+                        borderRadius: '50px 50px',
+                        width: '400px',
+                    }}
+                >
+                    <Link
+                        to="/onboarding"
+                        style={{
+                            color: 'white',
+                            fontWeight: 'bold',
+                            textDecoration: 'None',
+                        }}
+                    >
                         Next
                     </Link>
                 </button>
