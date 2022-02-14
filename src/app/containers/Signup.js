@@ -59,13 +59,14 @@ const Signup = ({ signup, isAuthenticated }) => {
                     onSubmit={(e) => onSubmit(e)}
                     className=" d-flex flex-column align-items-center justify-content-center"
                 >
-                    <div className="form-group ">
+                    <div className="form-group">
                         <input
                             className="form-control"
                             type="text"
                             placeholder="Name"
                             name="name"
                             value={name}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             required
                         />
@@ -88,6 +89,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                             placeholder="Email"
                             name="email"
                             value={email}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             required
                         />
@@ -99,6 +101,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                             placeholder="Phone Number"
                             name="phone"
                             value={phone}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             required
                         />
@@ -110,6 +113,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                             placeholder="Password"
                             name="password"
                             value={password}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             minLength="6"
                             required
@@ -122,6 +126,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                             placeholder="Confirm Password"
                             name="re_password"
                             value={re_password}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             minLength="6"
                             required
@@ -129,7 +134,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                     </div>
                     <button
                         className="btn btn-primary btn-block"
-                        style={{ width: '230px', borderRadius: '50px 50px' }}
+                        style={{ width: '170px', borderRadius: '50px 50px' }}
                         type="submit"
                     >
                         Register

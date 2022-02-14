@@ -11,7 +11,7 @@ const Conatainer = styled.div`
         #ffffff 0%,
         #ffffff 35%,
         #8080ff 65%,
-        #ff66ff 100%
+        #1a1aff 100%
     );
     height: 100vh;
     padding: 20px;

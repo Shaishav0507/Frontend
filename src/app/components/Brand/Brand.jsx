@@ -1,6 +1,5 @@
 import React from 'react'
 import { Span } from '../../components/Typography'
-import logo from './logo.png';
 import { styled, Box } from '@mui/system'
 import useSettings from 'app/hooks/useSettings'
 
@@ -25,12 +24,7 @@ const Brand = ({ children }) => {
     return (
         <BrandRoot>
             <Box display="flex" alignItems="center">
-                <img src= {logo}
-                    alt="Psybe"
-                    width={50} 
-                    height={50}
-                />
-                <StyledSpan mode={mode} className="sidenavHoverShow">
+                <StyledSpan mode={mode} className="sidenavHoverShow" style={{ fontSize:'35px' }}>
                     TaxRx
                 </StyledSpan>
             </Box>

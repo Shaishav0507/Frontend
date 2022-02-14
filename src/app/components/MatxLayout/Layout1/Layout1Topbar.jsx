@@ -77,13 +77,6 @@ const StyledItem = styled(MenuItem)(({ theme }) => ({
     },
 }))
 
-const IconBox = styled('div')(({ theme }) => ({
-    display: 'inherit',
-    [theme.breakpoints.down('md')]: {
-        display: 'none !important',
-    },
-}))
-
 const Layout1Topbar = () => {
     const theme = useTheme()
     const { settings, updateSettings } = useSettings()
@@ -123,19 +116,6 @@ const Layout1Topbar = () => {
                         <Icon>menu</Icon>
                     </StyledIconButton>
 
-                    <IconBox>
-                        <StyledIconButton>
-                            <Icon>mail_outline</Icon>
-                        </StyledIconButton>
-
-                        <StyledIconButton>
-                            <Icon>web_asset</Icon>
-                        </StyledIconButton>
-
-                        <StyledIconButton>
-                            <Icon>star_outline</Icon>
-                        </StyledIconButton>
-                    </IconBox>
                 </Box>
                 <Box display="flex" alignItems="center">
                     <MatxSearchBox />

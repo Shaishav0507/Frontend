@@ -35,6 +35,7 @@ const ResetPassword = ({ reset_password }) => {
                     backgroundColor: '#fff',
                     padding: '12px',
                     border: '1px solid #dfdfdf',
+                    borderRadius: '20px',
                 }}
             >
                 <h2>Forgot your password?</h2>
@@ -57,7 +58,7 @@ const ResetPassword = ({ reset_password }) => {
                     </li>
                 </ol>
             </div>
-            <form onSubmit={(e) => onSubmit(e)} className="card mt-4">
+            <form onSubmit={(e) => onSubmit(e)} className="card mt-4" style={{ borderRadius: '20px' }}>
                 <div class="card-body">
                     <div className="  form-group">
                         <label for="email-for-pass">
@@ -69,6 +70,7 @@ const ResetPassword = ({ reset_password }) => {
                             placeholder="Email"
                             name="email"
                             value={email}
+                            style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             required
                         />
