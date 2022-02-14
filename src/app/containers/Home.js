@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom-old'
 import Logo from './Logo'
+import Button from '@mui/material/Button'
+// import { Navigate } from 'react-router-dom'
 
 const Home = () => (
     <div className="container mt-3">
@@ -23,9 +25,11 @@ const Home = () => (
             <p class="lead">Send an Invoice or File GST Return.</p>
             <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Link class="btn btn-primary btn-lg" to="/login" role="button">
+            <Button class="btn btn-primary btn-lg">
+            <Link to="/login" style={{ color:'white', textDecoration: 'None' }}>
                 Login
             </Link>
+            </Button>
         </div>
     </div>
 )

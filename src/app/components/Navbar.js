@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom-old'
 import { connect } from 'react-redux'
 import { logout } from '../actions/auth'
 
