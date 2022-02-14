@@ -27,7 +27,7 @@ const ResetPassword = ({ reset_password }) => {
     }
 
     return (
-        <div className="container mt-2 justify-content-center">
+        <div className="container mt-2 justify-content-center flex-column align-items-center d-flex">
             <Logo />
             <div
                 className="forgot"
@@ -39,8 +39,8 @@ const ResetPassword = ({ reset_password }) => {
             >
                 <h2>Forgot your password?</h2>
                 <p>
-                    Change your password in three easy steps. This will help you
-                    to secure your password!
+                    Change your password in three easy steps. 
+                    This will help you to secure your password!
                 </p>
                 <ol class="list-unstyled mb-5">
                     <li>
@@ -61,7 +61,7 @@ const ResetPassword = ({ reset_password }) => {
                 <div class="card-body">
                     <div className="  form-group">
                         <label for="email-for-pass">
-                            Enter your email address
+                            <b>Enter your email address</b>
                         </label>
                         <input
                             className="form-control outline: 0"
@@ -82,7 +82,7 @@ const ResetPassword = ({ reset_password }) => {
                 <div class="card-footer">
                     <button
                         className="btn btn-primary btn-block"
-                        style={{ width: '230px', borderRadius: '50px 50px' }}
+                        style={{ width: '230px', borderRadius: '50px 50px', marginLeft: '190px' }}
                         type="submit"
                     >
                         Reset Password
