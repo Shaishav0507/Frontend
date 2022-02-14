@@ -113,7 +113,7 @@ const Layout1 = () => {
                         <Box flexGrow={1} position="relative">
                             <MatxSuspense>
                                 {/* {renderRoutes(routes)} */}
-                                {/* <Outlet /> */}
+                                <Outlet /> 
                             </MatxSuspense>
                         </Box>
                         {settings.footer.show && !settings.footer.fixed && (
@@ -134,7 +134,7 @@ const Layout1 = () => {
                         <Box flexGrow={1} position="relative">
                             <MatxSuspense>
                                 {/* {renderRoutes(routes)} */}
-                                {/* <Outlet /> */}
+                                <Outlet />
                             </MatxSuspense>
                         </Box>
                         {settings.footer.show && !settings.footer.fixed && (

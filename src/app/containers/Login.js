@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom-old'
 import { connect } from 'react-redux'
 import { login } from '../actions/auth'
 import Logo from './Logo'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom-old'
 // import GetStarted2 from './GetStarted2'
 import Tax from './tax.jpg'
 
