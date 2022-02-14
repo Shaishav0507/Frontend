@@ -3,7 +3,7 @@ import Loadable from 'app/components/Loadable/Loadable';
 
 const NotFound = Loadable(lazy(() => import("./NotFound")));
 const ForgotPassword = Loadable(lazy(() => import("./../../containers/ResetPassword")));
-const JwtLogin = Loadable(lazy(() => import("./../../containers/Login")));
+const JwtLogin = Loadable(lazy(() => import("./login/JwtLogin")));
 const JwtRegister = Loadable(lazy(() => import("./../../containers/Signup")));
 
 const sessionRoutes = [
