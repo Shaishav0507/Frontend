@@ -71,18 +71,6 @@ export const navigations = [
         icon: 'sell',
     },
     {
-        name: 'Charts',
-        icon: 'favorite',
-
-        children: [
-            {
-                name: 'Echarts',
-                path: '/charts/echarts',
-                iconText: 'E',
-            },
-        ],
-    },
-    {
         label: 'PAGES',
         type: 'label',
     },
