@@ -19,6 +19,10 @@ import Layout from './hocs/Layout'
 import store from './store'
 import GetStarted1 from './containers/GetStarted1'
 import GetStarted2 from './containers/GetStarted2'
+// import dashboardRoutes from './views/dashboard/DashboardRoutes'
+import { MatxTheme } from './components'
+import { SettingsProvider } from './contexts/SettingsContext'
+import Dashboard from './containers/Dashboard'
 
 const App = () => {
     // const all_pages = useRoutes(AllPages())
@@ -48,6 +52,11 @@ const App = () => {
                         />
                         <Route
                             exact
+                            path="/dashboard/default"
+                            component={Dashboard}
+                        />
+                        <Route
+                            exact
                             path="/password/reset/confirm/:uid/:token"
                             component={ResetPasswordConfirm}
                         />
@@ -56,11 +65,16 @@ const App = () => {
                             path="/activate/:uid/:token"
                             component={Activate}
                         />
-                        {/* <SettingsProvider>
+                        <SettingsProvider>
                             <MatxTheme>
-                                <AuthProvider>{all_pages}</AuthProvider>
+                                {/* <Route
+                                    exact
+                                    path="/dashboard/default"
+                                    component={dashboardRoutes}
+                                /> */}
+                                {/* <AuthProvider>{all_pages}</AuthProvider> */}
                             </MatxTheme>
-                        </SettingsProvider> */}
+                        </SettingsProvider>
                     </Switch>
                 </Layout>
             </Router>

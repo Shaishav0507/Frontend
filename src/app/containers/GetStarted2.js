@@ -122,7 +122,10 @@ const GetStarted2 = (props) => {
                                 />
                             }
                         >
-                            <Link to="/" style={{ textDecoration: 'None' }}>
+                            <Link
+                                to="/dashboard/default"
+                                style={{ textDecoration: 'None' }}
+                            >
                                 Send Invoices
                             </Link>
                         </Button>
@@ -161,7 +164,7 @@ const GetStarted2 = (props) => {
                             }
                         >
                             <Link
-                                to="/dashboard"
+                                to="/dashboard/default"
                                 style={{ textDecoration: 'None' }}
                             >
                                 File GST Return

@@ -1,10 +1,8 @@
 import React from 'react'
-import { styled, useTheme } from '@mui/system'
-import { Chatbox } from 'app/components'
-import { ChatHead } from 'app/components'
+import { styled } from '@mui/system'
+
 import { Span } from '../Typography'
-import { IconButton, Icon } from '@mui/material'
-import ShoppingCart from '../ShoppingCart/ShoppingCart'
+
 import MatxCustomizer from '../MatxCustomizer/MatxCustomizer'
 
 const SidebarRoot = styled('div')(({ theme, width }) => ({
@@ -40,26 +38,13 @@ const SidebarRoot = styled('div')(({ theme, width }) => ({
 }))
 
 const SecondarySidebarContent = () => {
-    const { palette } = useTheme()
-    const textColor = palette.primary.contrastText
+    // const { palette } = useTheme()
+    // const textColor = palette.primary.contrastText
     return (
         <SidebarRoot width={'50px'} className="secondary-sidebar">
             <Span sx={{ m: 'auto' }}></Span>
             <MatxCustomizer />
-            <ShoppingCart />
 
-            <ChatHead
-                icon={
-                    <IconButton
-                        sx={{ my: '12px', color: textColor }}
-                        size="small"
-                    >
-                        <Icon>comments</Icon>
-                    </IconButton>
-                }
-            >
-                <Chatbox />
-            </ChatHead>
             <Span sx={{ m: 'auto' }}></Span>
         </SidebarRoot>
     )

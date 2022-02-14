@@ -5,7 +5,7 @@ import useSettings from 'app/hooks/useSettings'
 import { styled, useTheme, Box } from '@mui/system'
 import { Span } from '../../../components/Typography'
 import { MatxMenu, MatxSearchBox } from 'app/components'
-import ShoppingCart from '../../ShoppingCart/ShoppingCart'
+
 import NotificationBar from '../../NotificationBar/NotificationBar'
 import { themeShadows } from 'app/components/MatxTheme/themeColors'
 import { NotificationProvider } from 'app/contexts/NotificationContext'
@@ -142,8 +142,6 @@ const Layout1Topbar = () => {
                     <NotificationProvider>
                         <NotificationBar />
                     </NotificationProvider>
-
-                    <ShoppingCart />
 
                     <MatxMenu
                         menuButton={
