@@ -50,10 +50,6 @@ const materialRoutes = [
         element: <AppForm />,
     },
     {
-        path: '/invoices/add',
-        element: <AppForm />,
-    },
-    {
         path: '/material/switch',
         element: <AppSwitch />,
     },
