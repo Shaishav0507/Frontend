@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import StatCards from './shared/StatCards'
-import Campaigns from './shared/Campaigns'
 import { Grid, Card } from '@mui/material'
 import StatCards2 from './shared/StatCards2'
 import DoughnutChart from './shared/Doughnut'
@@ -26,14 +25,6 @@ const SubTitle = styled('span')(({ theme }) => ({
     color: theme.palette.text.secondary,
 }))
 
-// const H4 = styled('h4')(({ theme }) => ({
-//     fontSize: '1rem',
-//     fontWeight: '500',
-//     marginBottom: '16px',
-//     textTransform: 'capitalize',
-//     color: theme.palette.text.secondary,
-// }))
-
 const Analytics = () => {
     const { palette } = useTheme()
 
@@ -45,8 +36,6 @@ const Analytics = () => {
                         <StatCards />
                         <TopSellingTable />
                         <StatCards2 />
-                        {/* <H4>Ongoing Projects</H4> */}
-                        {/*     <RowCards /> */}
                     </Grid>
 
                     <Grid item lg={4} md={4} sm={12} xs={12}>
@@ -63,7 +52,6 @@ const Analytics = () => {
                             />
                         </Card>
                         <UpgradeCard />
-                        <Campaigns />
                     </Grid>
                 </Grid>
             </ContentBox>

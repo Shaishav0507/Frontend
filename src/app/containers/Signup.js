@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom-old'
 import { connect } from 'react-redux'
 import { signup } from '../actions/auth'
 import Logo from './Logo'
+import { Button } from '@mui/material'
 
 const Signup = ({ signup, isAuthenticated }) => {
     const [accountCreated, setAccountCreated] = useState(false)
@@ -132,13 +133,13 @@ const Signup = ({ signup, isAuthenticated }) => {
                             required
                         />
                     </div>
-                    <button
+                    <Button
                         className="btn btn-primary btn-block"
                         style={{ width: '170px', borderRadius: '50px 50px' }}
                         type="submit"
                     >
-                        Register
-                    </button>
+                        Sign Up
+                    </Button>
                 </form>
             </div>
             <p className="mt-3 d-flex align-items-center justify-content-center">

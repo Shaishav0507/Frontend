@@ -24,7 +24,7 @@ export const navigations = [
             },
             {
                 name: 'Invoices',
-                path: '/material/buttons',
+                path: "/invoices",
                 iconText: 'B',
             },
             {

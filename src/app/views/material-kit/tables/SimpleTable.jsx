@@ -32,46 +32,12 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
     {
-        name: 'john doe',
-        date: '18 january, 2019',
-        amount: 1000,
-        status: 'close',
-        company: 'ABC Fintech LTD.',
-    },
-    {
-        name: 'kessy bryan',
-        date: '10 january, 2019',
-        amount: 9000,
-        status: 'open',
-        company: 'My Fintech LTD.',
-    },
-    {
-        name: 'james cassegne',
-        date: '8 january, 2019',
-        amount: 5000,
-        status: 'close',
-        company: 'Collboy Tech LTD.',
-    },
-    {
-        name: 'lucy brown',
-        date: '1 january, 2019',
-        amount: 89000,
-        status: 'open',
-        company: 'ABC Fintech LTD.',
-    },
-    {
-        name: 'lucy brown',
-        date: '1 january, 2019',
-        amount: 89000,
-        status: 'open',
-        company: 'ABC Fintech LTD.',
-    },
-    {
-        name: 'lucy brown',
-        date: '1 january, 2019',
-        amount: 89000,
-        status: 'open',
-        company: 'ABC Fintech LTD.',
+        Image: 'Hello',
+        Name: 'Shaishav',
+        Invoice_no: 1000,
+        InvociceDate: '05-07-2000',
+        PaymentDate: '05-07-2000',
+        Amount:100,
     },
 ]
 
@@ -81,11 +47,12 @@ const SimpleTable = () => {
             <StyledTable>
                 <TableHead>
                     <TableRow>
+                        <TableCell>Image</TableCell>
                         <TableCell>Name</TableCell>
-                        <TableCell>Company</TableCell>
-                        <TableCell>Start Date</TableCell>
-                        <TableCell>Status</TableCell>
+                        <TableCell>Invoice Number</TableCell>
                         <TableCell>Amount</TableCell>
+                        <TableCell>Invoice Date</TableCell>
+                        <TableCell>Payment Date</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
@@ -93,16 +60,17 @@ const SimpleTable = () => {
                     {subscribarList.map((subscriber, index) => (
                         <TableRow key={index}>
                             <TableCell align="left">
-                                {subscriber.name}
+                                {subscriber.Image}
                             </TableCell>
                             <TableCell align="left">
-                                {subscriber.company}
+                                {subscriber.Name}
                             </TableCell>
                             <TableCell align="left">
-                                {subscriber.date}
+                                {subscriber.Invoice_no}
                             </TableCell>
-                            <TableCell>{subscriber.status}</TableCell>
-                            <TableCell>${subscriber.amount}</TableCell>
+                            <TableCell>{subscriber.Amount}</TableCell>
+                            <TableCell>{subscriber.InvociceDate}</TableCell>
+                            <TableCell>${subscriber.PaymentDate}</TableCell>
                             <TableCell>
                                 <IconButton>
                                     <Icon color="error">close</Icon>

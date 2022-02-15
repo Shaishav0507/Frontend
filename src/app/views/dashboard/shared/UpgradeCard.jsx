@@ -35,11 +35,11 @@ const Paragraph = styled('p')(({ theme }) => ({
 const UpgradeCard = () => {
     return (
         <CardRoot>
-            <h1>
-                    THINGS YOU CAN DO
-            </h1>
+            <h2>
+                THINGS YOU CAN DO
+            </h2>
             <StyledCard elevation={0}>
-                <Paragraph style={{fontWeight: 'bold', fontSize: '20px'}}>
+                <Paragraph style={{ontSize: '20px'}}>
                     Add a Customer. <br /> Add a Invoice. <br/> Customize your Invoices. <br/> Invite a guest collaborator.
                 </Paragraph>
             </StyledCard>
