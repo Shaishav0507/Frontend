@@ -49,6 +49,7 @@ const Login = ({ login, isAuthenticated }) => {
                                 placeholder="Email"
                                 name="email"
                                 value={email}
+                                style={{ borderRadius:'15px'}}
                                 onChange={(e) => onChange(e)}
                                 required
                             />
@@ -60,6 +61,7 @@ const Login = ({ login, isAuthenticated }) => {
                                 placeholder="Password"
                                 name="password"
                                 value={password}
+                                style={{ borderRadius:'15px'}}
                                 onChange={(e) => onChange(e)}
                                 minLength="6"
                                 required
@@ -68,13 +70,13 @@ const Login = ({ login, isAuthenticated }) => {
                         <button
                             className="btn btn-primary mb-2 btn-block "
                             type="submit"
-                            style={{ borderRadius: '50px 50px' }}
+                            style={{ borderRadius: '50px 50px', width: '180px', marginLeft: '15px' }}
                         >
                             Login
                         </button>
                         <button
                             className="btn btn-primary btn-block"
-                            style={{ borderRadius: '50px 50px' }}
+                            style={{ borderRadius: '50px 50px', width: '180px', marginLeft: '15px' }}
                             type="submit"
                         >
                             <Link to="/launchpad" style={{ color: 'white' }}>

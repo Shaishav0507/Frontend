@@ -14,7 +14,7 @@ const Home = () => (
                 backgroundColor: 'whitesmoke',
                 padding: '35px',
                 border: '1px solid #dfdfdf',
-                borderRadius: '50px 50px',
+                borderRadius: '200px 50px',
                 width: '800px',
                 margin: 'auto',
             }}
@@ -25,7 +25,7 @@ const Home = () => (
             <p class="lead">Send an Invoice or File GST Return.</p>
             <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Button class="btn btn-primary btn-lg">
+            <Button class="btn btn-primary btn-lg" style={{ borderRadius: '15px' }}>
             <Link to="/login" style={{ color:'white', textDecoration: 'None' }}>
                 Login
             </Link>
