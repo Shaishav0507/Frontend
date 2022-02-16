@@ -1,8 +1,12 @@
 import React from 'react'
 import SimpleForm from './SimpleForm'
-import StepperForm from './StepperForm'
-import { Breadcrumb, SimpleCard } from 'app/components'
+// import StepperForm from './StepperForm'
+import SimpleTable from './../tables/SimpleTable'
+import { SimpleCard } from 'app/components'
 import { Box, styled } from '@mui/system'
+// import { Button, Icon } from '@mui/material'
+// import { Span } from 'app/components/Typography'
+// import { Link } from 'react-router-dom-old'
 
 const Container = styled('div')(({ theme }) => ({
     margin: '30px',
@@ -20,20 +24,38 @@ const Container = styled('div')(({ theme }) => ({
 const AppForm = () => {
     return (
         <Container>
-            <div className="breadcrumb">
+            {/* <div className="breadcrumb">
                 <Breadcrumb
                     routeSegments={[
                         { name: 'Material', path: '/material' },
                         { name: 'Form' },
                     ]}
                 />
-            </div>
-            <SimpleCard title="Simple Form">
+            </div> */}
+            {/* <SimpleCard>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    type="submit"
+                    style={{
+                        borderRadius: '15px',
+                        position: 'relative',
+                        left: '980px',
+                    }}
+                >
+                    <Icon>add</Icon>
+                        <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
+                            Create a Invoice
+                        </Span>
+                </Button>
+            </SimpleCard>
+            <Box py="12px" /> */}
+            <SimpleCard title="Create Invoice">
                 <SimpleForm />
             </SimpleCard>
             <Box py="12px" />
-            <SimpleCard title="stepper form">
-                <StepperForm />
+            <SimpleCard title="Pending Invoices">
+                <SimpleTable />
             </SimpleCard>
         </Container>
     )

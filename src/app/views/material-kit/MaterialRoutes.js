@@ -46,6 +46,10 @@ const materialRoutes = [
         element: <AppCheckbox />,
     },
     {
+        path: '/invoices',
+        element: <AppForm />,
+    },
+    {
         path: '/material/switch',
         element: <AppSwitch />,
     },
