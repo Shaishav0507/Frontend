@@ -94,6 +94,8 @@ const GetStarted2 = (props) => {
                         <Button
                             style={{ outline: 'None' }}
                             className="butt"
+                            onClick="window.location.href=window.location.href"
+                            type="submit"
                             variant="outlined"
                             startIcon={
                                 <LocalAtmOutlinedIcon
@@ -134,6 +136,7 @@ const GetStarted2 = (props) => {
                         <Button
                             style={{ outline: 'None', marginTop: '20px' }}
                             className="butt"
+                            onClick="window.location.href=window.location.href"
                             variant="outlined"
                             startIcon={
                                 <LocalAtmOutlinedIcon

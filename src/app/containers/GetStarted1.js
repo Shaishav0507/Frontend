@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom-old'
 // import GetStarted2 from './GetStarted2'
-import Tax from './tax.jpg'
+import Tax from './tax.png'
 
 import styled from 'styled-components'
 
@@ -44,12 +44,10 @@ const GetStarted1 = () => {
                 alt="Tax_Image"
                 style={{
                     float: 'right',
-                    width: '500px',
-                    height: '450px',
-                    marginTop: '40px',
-                    marginRight: '90px',
-                    borderRadius: '50px 50px',
-                    opacity: '0.6',
+                    width: '550px',
+                    height: '500px',
+                    marginTop: '20px',
+                    marginRight: '150px',
                 }}
             />
             <h1>Welcome to TaxRx !!</h1>

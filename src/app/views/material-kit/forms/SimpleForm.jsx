@@ -4,6 +4,9 @@ import {
     Grid,
     FormControlLabel,
     Checkbox,
+    // InputAdornment,
+    // IconButton,
+    Fab,
 } from '@mui/material'
 import { styled } from '@mui/system'
 import { Span } from 'app/components/Typography'
@@ -12,6 +15,7 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import { DatePicker } from '@mui/lab'
+import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined'
 
 const TextField = styled(TextValidator)(() => ({
     width: '100%',
@@ -52,28 +56,48 @@ const SimpleForm = () => {
         setState({ ...state, date })
     }
 
-    const {
-        Name,
-        invoice,
-        amount,
-        date,
-        Payment,
-    } = state
+    const { Name, invoice, amount, date, Payment } = state
 
+    // const handleFileUpload = () => {}
     return (
         <div>
             <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
                 <Grid container spacing={6}>
                     <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-                        <TextField
+                        {/* <TextField
                             label="Add a Customer"
                             onChange={handleChange}
-                            type="image"
                             name="Name"
+                            type="file"
+                            style={{}}
                             value={Name || ''}
                             validators={['required']}
                             errorMessages={['this field is required']}
-                        />
+                        /> */}
+                        <label htmlFor="upload-photo">
+                            <input
+                                style={{ display: 'none' }}
+                                id="upload-photo"
+                                name="upload-photo"
+                                type="file"
+                            />
+
+                            <Fab
+                                color="secondary"
+                                size="small"
+                                component="span"
+                                aria-label="add"
+                                variant="extended"
+                                style={{
+                                    marginTop: '10px',
+                                    marginLeft: '140px',
+                                    marginBottom: '30px',
+                                }}
+                            >
+                                <PersonAddOutlinedIcon /> Upload photo
+                            </Fab>
+                        </label>
+
                         <TextField
                             label="Amount"
                             onChange={handleChange}
