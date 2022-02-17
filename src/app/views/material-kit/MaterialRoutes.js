@@ -2,7 +2,8 @@ import React, { lazy } from 'react'
 import Loadable from 'app/components/Loadable/Loadable';
 
 const AppTable = Loadable(lazy(() => import("./tables/AppTable")));
-const AppForm = Loadable(lazy(() => import("./forms/AppForm")));
+const InvForm = Loadable(lazy(() => import("./forms/AppForm")));
+const CustForm = Loadable(lazy(() => import("./forms/CustomerForm")));
 const AppButton = Loadable(lazy(() => import("./buttons/AppButton")));
 const AppIcon = Loadable(lazy(() => import("./icons/AppIcon")));
 const AppProgress = Loadable(lazy(() => import("./AppProgress")));
@@ -20,10 +21,6 @@ const materialRoutes = [
     {
         path: '/material/table',
         element: <AppTable />,
-    },
-    {
-        path: '/material/form',
-        element: <AppForm />,
     },
     {
         path: '/material/buttons',
@@ -47,7 +44,11 @@ const materialRoutes = [
     },
     {
         path: '/invoices',
-        element: <AppForm />,
+        element: <InvForm />,
+    },
+    {
+        path: '/customers',
+        element: <CustForm />,
     },
     {
         path: '/material/switch',

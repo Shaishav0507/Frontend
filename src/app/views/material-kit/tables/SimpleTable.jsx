@@ -33,11 +33,11 @@ const StyledTable = styled(Table)(({ theme }) => ({
 const subscribarList = [
     {
         Image: 'Hello',
+        Username: 'Shai05',
         Name: 'Shaishav',
-        Invoice_no: 1000,
-        InvociceDate: '05-07-2000',
-        PaymentDate: '05-07-2000',
-        Amount:100,
+        Email: 'abc@gmail.com',
+        Contact: '99992386342',
+        Address: '13123 Gurgaon',
     },
 ]
 
@@ -48,11 +48,11 @@ const SimpleTable = () => {
                 <TableHead>
                     <TableRow>
                         <TableCell>Image</TableCell>
+                        <TableCell>Username</TableCell>
                         <TableCell>Name</TableCell>
-                        <TableCell>Invoice Number</TableCell>
-                        <TableCell>Amount</TableCell>
-                        <TableCell>Invoice Date</TableCell>
-                        <TableCell>Payment Date</TableCell>
+                        <TableCell>Email</TableCell>
+                        <TableCell>Contact</TableCell>
+                        <TableCell>Address</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
@@ -63,14 +63,14 @@ const SimpleTable = () => {
                                 {subscriber.Image}
                             </TableCell>
                             <TableCell align="left">
-                                {subscriber.Name}
+                                {subscriber.Username}
                             </TableCell>
                             <TableCell align="left">
-                                {subscriber.Invoice_no}
+                                {subscriber.Name}
                             </TableCell>
-                            <TableCell>{subscriber.Amount}</TableCell>
-                            <TableCell>{subscriber.InvociceDate}</TableCell>
-                            <TableCell>${subscriber.PaymentDate}</TableCell>
+                            <TableCell>{subscriber.Email}</TableCell>
+                            <TableCell>{subscriber.Contact}</TableCell>
+                            <TableCell>{subscriber.Address}</TableCell>
                             <TableCell>
                                 <IconButton>
                                     <Icon color="error">close</Icon>

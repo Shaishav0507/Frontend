@@ -27,7 +27,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <>
-            <div className="container mt-2 pt-5 d-flex flex-column align-items-center justify-content-center">
+            <div className="container pt-3 d-flex flex-column align-items-center justify-content-center">
                 <Logo />
                 <div
                     style={{

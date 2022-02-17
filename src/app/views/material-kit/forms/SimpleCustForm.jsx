@@ -12,9 +12,6 @@ import { styled } from '@mui/system'
 import { Span } from 'app/components/Typography'
 import React, { useState, useEffect } from 'react'
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
-import AdapterDateFns from '@mui/lab/AdapterDateFns'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import { DatePicker } from '@mui/lab'
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined'
 
 const TextField = styled(TextValidator)(() => ({
@@ -22,7 +19,7 @@ const TextField = styled(TextValidator)(() => ({
     marginBottom: '16px',
 }))
 
-const SimpleForm = () => {
+const SimpleCustForm = () => {
     const [state, setState] = useState({
         date: new Date(),
     })
@@ -52,11 +49,7 @@ const SimpleForm = () => {
         })
     }
 
-    const handleDateChange = (date) => {
-        setState({ ...state, date })
-    }
-
-    const { Name, invoice, amount, date, Payment } = state
+    const { Name, username, email, monumber, address } = state
 
     // const handleFileUpload = () => {}
     return (
@@ -99,12 +92,17 @@ const SimpleForm = () => {
                         </label>
 
                         <TextField
-                            label="₹ Amount"
+                            type="text"
+                            name="username"
+                            id="standard-basic"
                             onChange={handleChange}
-                            type="number"
-                            name="amount"
-                            value={amount || ''}
-                            validators={['required']}
+                            value={username || ''}
+                            validators={[
+                                'required',
+                                'minStringLength: 4',
+                                'maxStringLength: 9',
+                            ]}
+                            label="Username (Min length 4, Max length 9)"
                             errorMessages={['this field is required']}
                         />
                         <FormControlLabel
@@ -124,50 +122,46 @@ const SimpleForm = () => {
                             errorMessages={['this field is required']}
                         />
                         <TextField
-                            label="Invoice Number"
+                            label="Email"
+                            onChange={handleChange}
+                            type="email"
+                            name="email"
+                            value={email || ''}
+                            validators={['required', 'isEmail']}
+                            errorMessages={[
+                                'this field is required',
+                                'email is not valid',
+                            ]}
+                        />
+                        <TextField
+                            sx={{ mb: 2 }}
+                            label="Contact Number"
                             onChange={handleChange}
                             type="number"
-                            name="invoice"
-                            value={invoice || ''}
+                            name="monumber"
+                            value={monumber || ''}
+                            validators={[
+                                'required',
+                                'minStringLength:16',
+                                'maxStringLength: 16',
+                            ]}
+                            errorMessages={['this field is required']}
+                        />
+                        <TextField
+                            label="Address"
+                            onChange={handleChange}
+                            type="text"
+                            name="address"
+                            value={address || ''}
                             validators={['required']}
                             errorMessages={['this field is required']}
                         />
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DatePicker
-                                value={date}
-                                onChange={handleDateChange}
-                                renderInput={(props) => (
-                                    <TextField
-                                        {...props}
-                                        // variant="Outlined"
-                                        id="mui-pickers-date"
-                                        label="Invoice Date"
-                                        sx={{ mb: 2, width: '100%' }}
-                                    />
-                                )}
-                            />
-                        </LocalizationProvider>
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DatePicker
-                                value={Payment}
-                                onChange={handleDateChange}
-                                renderInput={(props) => (
-                                    <TextField
-                                        {...props}
-                                        // variant="Outlined"
-                                        id="mui-pickers-date"
-                                        label="Payment Due"
-                                        sx={{ mb: 2, width: '100%' }}
-                                    />
-                                )}
-                            />
-                        </LocalizationProvider>
                     </Grid>
                 </Grid>
                 <Button color="primary" variant="contained" type="submit">
-                    <Icon>send</Icon>
+                    <Icon>add</Icon>
                     <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
-                        Submit
+                        Add Customer
                     </Span>
                 </Button>
             </ValidatorForm>
@@ -175,4 +169,4 @@ const SimpleForm = () => {
     )
 }
 
-export default SimpleForm
+export default SimpleCustForm

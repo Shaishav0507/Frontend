@@ -32,6 +32,12 @@ export const navigations = [
                 path: '/material/checkbox',
                 iconText: 'D',
             },
+            {
+                name: 'Customers',
+                path: '/customers',
+                iconText: 'D',
+                // icon: 'people',
+            },
         ],
     },
     {

@@ -23,7 +23,7 @@ export const AllPages = () => {
         },
         {
             path: '*',
-            element: <Link to="dashboard/default" />,
+            element: <NotFound />,
         },
     ]
 
