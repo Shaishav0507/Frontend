@@ -4,7 +4,7 @@ import materialRoutes from 'app/views/material-kit/MaterialRoutes'
 import dashboardRoutes from 'app/views/dashboard/DashboardRoutes'
 import sessionRoutes from 'app/views/sessions/SessionRoutes'
 import MatxLayout from '../components/MatxLayout/MatxLayout'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom-old'
 
 export const AllPages = () => {
     const all_routes = [

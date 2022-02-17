@@ -27,7 +27,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <>
-            <div className="container mt-2 pt-5 d-flex flex-column align-items-center justify-content-center">
+            <div className="container pt-3 d-flex flex-column align-items-center justify-content-center">
                 <Logo />
                 <div
                     style={{
@@ -74,7 +74,7 @@ const Login = ({ login, isAuthenticated }) => {
                         >
                             Login
                         </button>
-                        {/* <button
+                        <button
                             className="btn btn-primary btn-block"
                             style={{ borderRadius: '50px 50px', width: '180px', marginLeft: '15px' }}
                             type="submit"
@@ -82,7 +82,7 @@ const Login = ({ login, isAuthenticated }) => {
                             <Link to="/launchpad" style={{ color: 'white' }}>
                                 LaunchPad
                             </Link>
-                        </button> */}
+                        </button>
                     </form>
                 </div>
                 <p className="mt-3">

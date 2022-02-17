@@ -11,7 +11,7 @@ const Icon = styled.img`
 `
 
 const Logo = () => {
-    return <Icon src={LOGO} style={{ width: '200px', height: '100px' }} />
+    return <Icon src={LOGO} style={{ width: '200px', height: '150px' }} />
 }
 
 export default Logo

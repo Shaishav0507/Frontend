@@ -24,5 +24,4 @@ export { default as MatxProgressBar } from './MatxProgressBar/MatxProgressBar'
 export { default as SimpleCard } from './cards/SimpleCard'
 
 export { default as MatxLogo } from './MatxLogo/MatxLogo'
-export { default as FacebookIcon } from './icons/FacebookIcon'
-export { default as GoogleIcon } from './icons/GoogleIcon'
+

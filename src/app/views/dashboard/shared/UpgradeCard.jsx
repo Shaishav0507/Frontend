@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from '@mui/material'
 import { styled } from '@mui/system'
 import { convertHexToRGB } from 'utils'
+import { Link } from 'react-router-dom'
 
 const CardRoot = styled(Card)(({ theme }) => ({
     marginBottom: '24px',
@@ -39,8 +40,21 @@ const UpgradeCard = () => {
                 THINGS YOU CAN DO
             </h2>
             <StyledCard elevation={0}>
-                <Paragraph style={{ontSize: '20px'}}>
-                    Add a Customer. <br /> Add a Invoice. <br/> Customize your Invoices. <br/> Invite a guest collaborator.
+                <Paragraph style={{fontSize: '20px'}}>
+                    <ul>
+                        <li style={{ listStyleType: 'none', paddingBottom:'5px'}}>
+                        <Link to="/invoices">Add a Invocie.</Link> 
+                        </li>
+                        <li style={{ listStyleType: 'none', paddingBottom:'5px' }}>
+                        <Link to="/customers">Add a Customer</Link> 
+                        </li>
+                        <li style={{ listStyleType: 'none', paddingBottom:'5px' }}>
+                        <Link to="/invoices">Customize your Invoices</Link> 
+                        </li>
+                        <li style={{ listStyleType: 'none'}}>
+                        <Link to="/invoices">Invite a guest collaborator</Link> 
+                        </li>
+                    </ul>
                 </Paragraph>
             </StyledCard>
         </CardRoot>

@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom-old'
 import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import styled from 'styled-components'

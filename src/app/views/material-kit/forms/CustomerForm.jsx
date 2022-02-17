@@ -1,7 +1,6 @@
 import React from 'react'
-import SimpleForm from './SimpleForm'
-// import StepperForm from './StepperForm'
-import PaginationTable from './../tables/PaginationTable'
+import SimpleCustForm from './SimpleCustForm'
+import SimpleTable from './../tables/SimpleTable'
 import { SimpleCard } from 'app/components'
 import { Box, styled } from '@mui/system'
 // import { Button, Icon } from '@mui/material'
@@ -21,7 +20,7 @@ const Container = styled('div')(({ theme }) => ({
     },
 }))
 
-const AppForm = () => {
+const CustomerForm = () => {
     return (
         <Container>
             {/* <div className="breadcrumb">
@@ -50,15 +49,15 @@ const AppForm = () => {
                 </Button>
             </SimpleCard>
             <Box py="12px" /> */}
-            <SimpleCard title="Create Invoice">
-                <SimpleForm />
+            <SimpleCard title="Create Customer">
+                <SimpleCustForm />
             </SimpleCard>
             <Box py="12px" />
-            <SimpleCard title="Pending Invoices">
-                <PaginationTable />
+            <SimpleCard title="Current Customers">
+                <SimpleTable />
             </SimpleCard>
         </Container>
     )
 }
 
-export default AppForm
+export default CustomerForm
