@@ -9,6 +9,7 @@ import Signup from './containers/Signup'
 import Activate from './containers/Activate'
 import ResetPassword from './containers/ResetPassword'
 import ResetPasswordConfirm from './containers/ResetPasswordConfirm'
+import { start } from './containers/StartPage/start'
 
 import Layout from './hocs/Layout'
 import store from './store'
@@ -22,6 +23,7 @@ const App = () => {
             <Router>
                 <Layout>
                     <Switch>
+                        <Route exact path="/users" component={start} />
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={Signup} />

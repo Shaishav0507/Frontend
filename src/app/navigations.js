@@ -10,7 +10,7 @@ export const navigations = [
     },
     {
         name: 'Users',
-        path: '/material/buttons',
+        path: '/users',
         icon: 'people',
     },
     {
@@ -56,7 +56,7 @@ export const navigations = [
             },
             {
                 name: 'Vendors',
-                path: '/material/checkbox',
+                path: '/vendors',
                 iconText: 'C',
             },
             {
