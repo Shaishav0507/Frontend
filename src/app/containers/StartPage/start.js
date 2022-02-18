@@ -8,7 +8,7 @@ export class start extends Component {
     }
 
     refreshList() {
-        fetch(process.env.REACT_APP_API + '/api/start/')
+        fetch(process.env.REACT_APP_API + 'api/start')
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })

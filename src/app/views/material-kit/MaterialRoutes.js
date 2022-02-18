@@ -4,11 +4,12 @@ import Loadable from 'app/components/Loadable/Loadable';
 const AppTable = Loadable(lazy(() => import("./tables/AppTable")));
 const InvForm = Loadable(lazy(() => import("./forms/AppForm")));
 const CustForm = Loadable(lazy(() => import("./forms/CustomerForm")));
+const VenForm = Loadable(lazy(() => import("./forms/VendorForm")));
 const AppButton = Loadable(lazy(() => import("./buttons/AppButton")));
 const AppIcon = Loadable(lazy(() => import("./icons/AppIcon")));
 const AppProgress = Loadable(lazy(() => import("./AppProgress")));
 const AppMenu = Loadable(lazy(() => import("./menu/AppMenu")));
-const AppCheckbox = Loadable(lazy(() => import("./checkbox/AppCheckbox")));
+// const AppCheckbox = Loadable(lazy(() => import("./checkbox/AppCheckbox")));
 const AppSwitch = Loadable(lazy(() => import("./switch/AppSwitch")));
 const AppRadio = Loadable(lazy(() => import("./radio/AppRadio")));
 const AppSlider = Loadable(lazy(() => import("./slider/AppSlider")));
@@ -23,7 +24,7 @@ const materialRoutes = [
         element: <AppTable />,
     },
     {
-        path: '/material/buttons',
+        path: '/users',
         element: <AppButton />,
     },
     {
@@ -39,8 +40,8 @@ const materialRoutes = [
         element: <AppMenu />,
     },
     {
-        path: '/material/checkbox',
-        element: <AppCheckbox />,
+        path: '/vendors',
+        element: <VenForm />,
     },
     {
         path: '/invoices',

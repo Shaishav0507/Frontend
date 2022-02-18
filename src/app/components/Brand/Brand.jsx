@@ -2,6 +2,7 @@ import React from 'react'
 import { Span } from '../../components/Typography'
 import { styled, Box } from '@mui/system'
 import useSettings from 'app/hooks/useSettings'
+import { Link } from 'react-router-dom-old'
 
 const BrandRoot = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -25,7 +26,9 @@ const Brand = ({ children }) => {
         <BrandRoot>
             <Box display="flex" alignItems="center">
                 <StyledSpan mode={mode} className="sidenavHoverShow" style={{ fontSize:'35px' }}>
-                    TaxRx
+                    <Link to='/'>
+                        TaxRx
+                    </Link>
                 </StyledSpan>
             </Box>
             <Box
