@@ -43,16 +43,16 @@ const UpgradeCard = () => {
                 <Paragraph style={{fontSize: '20px'}}>
                     <ul>
                         <li style={{ listStyleType: 'none', paddingBottom:'5px'}}>
-                        <Link to="/invoices">Add a Invocie.</Link> 
+                        <Link to="/invoices" style={{ textDecoration: 'None'}}>Add a Invocie</Link> 
                         </li>
                         <li style={{ listStyleType: 'none', paddingBottom:'5px' }}>
-                        <Link to="/customers">Add a Customer</Link> 
+                        <Link to="/customers" style={{ textDecoration: 'None'}}>Add a Customer</Link> 
                         </li>
                         <li style={{ listStyleType: 'none', paddingBottom:'5px' }}>
-                        <Link to="/invoices">Customize your Invoices</Link> 
+                        <Link to="/invoices" style={{ textDecoration: 'None'}}>Customize your Invoices</Link> 
                         </li>
                         <li style={{ listStyleType: 'none'}}>
-                        <Link to="/invoices">Invite a guest collaborator</Link> 
+                        <Link to="/invoices" style={{ textDecoration: 'None'}}>Invite a guest collaborator</Link> 
                         </li>
                     </ul>
                 </Paragraph>

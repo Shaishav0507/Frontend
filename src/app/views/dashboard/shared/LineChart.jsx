@@ -21,7 +21,12 @@ const LineChart = ({ height, color = [] }) => {
                 fontFamily: 'roboto',
             },
         },
-        tooltip: {},
+        // tooltip: {},
+        tooltip: {
+            show: true,
+            trigger: 'item',
+            formatter: '{b}: {c}',
+        },
         xAxis: {
             type: 'category',
             data: [
@@ -80,7 +85,7 @@ const LineChart = ({ height, color = [] }) => {
                 smooth: true,
                 symbolSize: 4,
                 lineStyle: {
-                    width: 4,
+                    width: 5,
                 },
             },
             {
@@ -91,7 +96,7 @@ const LineChart = ({ height, color = [] }) => {
                 smooth: true,
                 symbolSize: 4,
                 lineStyle: {
-                    width: 4,
+                    width: 5,
                 },
             },
         ],

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom-old'
 import { Grid, Card, Icon, IconButton, Tooltip } from '@mui/material'
 import { Box, styled } from '@mui/system'
 import { Small } from 'app/components/Typography'
@@ -51,7 +52,9 @@ const StatCards = () => {
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
                         <IconButton>
-                            <Icon>arrow_right_alt</Icon>
+                            <Link to="/users">
+                                <Icon>arrow_right_alt</Icon>
+                            </Link>
                         </IconButton>
                     </Tooltip>
                 </StyledCard>
@@ -61,15 +64,15 @@ const StatCards = () => {
                     <ContentBox>
                         <Icon className="icon">attach_money</Icon>
                         <Box ml="12px">
-                            <Small sx={{ lineHeight: 1 }}>
-                            TOTAL ESTIMATE
-                            </Small>
+                            <Small sx={{ lineHeight: 1 }}>TOTAL ESTIMATE</Small>
                             <Heading>$80,500</Heading>
                         </Box>
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
                         <IconButton>
-                            <Icon>arrow_right_alt</Icon>
+                            <Link to="/">
+                                <Icon>arrow_right_alt</Icon>
+                            </Link>
                         </IconButton>
                     </Tooltip>
                 </StyledCard>
@@ -85,7 +88,9 @@ const StatCards = () => {
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
                         <IconButton>
-                            <Icon>arrow_right_alt</Icon>
+                            <Link to="/customers">
+                                <Icon>arrow_right_alt</Icon>
+                            </Link>
                         </IconButton>
                     </Tooltip>
                 </StyledCard>
@@ -101,7 +106,9 @@ const StatCards = () => {
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
                         <IconButton>
-                            <Icon>arrow_right_alt</Icon>
+                            <Link to="/invoices">
+                                <Icon>arrow_right_alt</Icon>
+                            </Link>
                         </IconButton>
                     </Tooltip>
                 </StyledCard>
