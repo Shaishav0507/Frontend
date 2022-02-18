@@ -33,7 +33,14 @@ const App = () => {
                         <Route
                             exact
                             path="/onboarding"
-                            component={GetStarted2}
+                            component={(props) => (
+                                <GetStarted2 fname={' Welcome'} {...props}>
+                                    {props.children}
+                                </GetStarted2>
+                            )}
+                            // render={(props) => (
+                            //     <GetStarted2 text="2" {...props} />
+                            // )}
                         />
                         <Route
                             exact

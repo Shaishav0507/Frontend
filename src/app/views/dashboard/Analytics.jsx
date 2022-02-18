@@ -45,9 +45,9 @@ const Analytics = () => {
                             <DoughnutChart
                                 height="300px"
                                 color={[
-                                    palette.primary.dark,
-                                    palette.primary.main,
-                                    palette.primary.light,
+                                    palette.error.main,
+                                    palette.success.light,
+                                    palette.warning.light,
                                 ]}
                             />
                         </Card>

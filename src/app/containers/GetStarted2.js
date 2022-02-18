@@ -66,7 +66,10 @@ const GetStarted2 = (props) => {
                     {/* <div>
                         <Welcome name="helol" />
                     </div> */}
-                    <h2>Hello, {props.children} </h2>
+                    <h2>
+                        Hello,
+                        {props.fname}
+                    </h2>
                     <p style={{ fontSize: '22px', marginTop: '50px' }}>
                         What would you link to do in TaxRx?
                     </p>

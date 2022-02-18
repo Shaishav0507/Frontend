@@ -7,8 +7,8 @@ const DoughnutChart = ({ height, color = [] }) => {
 
     const option = {
         legend: {
-            show: true,
-            itemGap: 40,
+            show: false,
+            itemGap: 10,
             icon: 'circle',
             bottom: 0,
             textStyle: {
@@ -18,9 +18,9 @@ const DoughnutChart = ({ height, color = [] }) => {
             },
         },
         tooltip: {
-            show: false,
+            show: true,
             trigger: 'item',
-            formatter: '{a} <br/>{b}: {c} ({d}%)',
+            formatter: '{b}:  ({d}%)',
         },
         xAxis: [
             {
@@ -64,13 +64,13 @@ const DoughnutChart = ({ height, color = [] }) => {
                         formatter: '{a}',
                     },
                     emphasis: {
-                        show: true,
+                        show: false,
                         textStyle: {
                             fontSize: '14',
                             fontWeight: 'normal',
-                            // color: "rgba(15, 21, 77, 1)"
+                            // color: 'rgba(15, 21, 77, 1)',
                         },
-                        formatter: '{b} \n{c} ({d}%)',
+                        formatter: '{b} \n({d}%)',
                     },
                 },
                 labelLine: {
@@ -80,17 +80,30 @@ const DoughnutChart = ({ height, color = [] }) => {
                 },
                 data: [
                     {
-                        value: 65,
-                        name: 'Invoices Sent',
+                        value: 30,
+                        name: 'Rent Expenses',
+                    },
+                    {
+                        value: 10,
+                        name: 'Repair & Manintainance',
                     },
                     {
                         value: 20,
-                        name: 'GST Return',
+                        name: 'Meals & Entertainment',
+                    },
+                    {
+                        value: 20,
+                        name: 'Vehicles',
+                    },
+                    {
+                        value: 20,
+                        name: 'Other',
                     },
                 ],
+
                 itemStyle: {
                     emphasis: {
-                        shadowBlur: 10,
+                        shadowBlur: 20,
                         shadowOffsetX: 0,
                         shadowColor: 'rgba(0, 0, 0, 0.5)',
                     },

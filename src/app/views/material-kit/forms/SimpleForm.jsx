@@ -25,10 +25,10 @@ const TextField = styled(TextValidator)(() => ({
 const SimpleForm = () => {
     const [state, setState] = useState({
         date: new Date(),
-        Name: "",
+        Name: '',
         Payment: new Date(),
-        invoice: "",
-        amount: "",
+        invoice: '',
+        amount: '',
     })
 
     useEffect(() => {
@@ -107,7 +107,7 @@ const SimpleForm = () => {
 
                         <TextField
                             label="₹ Amount"
-                            onChange={e => handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             type="number"
                             name="amount"
                             value={amount || ''}
@@ -123,7 +123,7 @@ const SimpleForm = () => {
                     <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
                         <TextField
                             label="Name"
-                            onChange={e => handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             type="text"
                             name="Name"
                             value={Name || ''}
@@ -132,7 +132,7 @@ const SimpleForm = () => {
                         />
                         <TextField
                             label="Invoice Number"
-                            onChange={e => handleChange(e)}
+                            onChange={(e) => handleChange(e)}
                             type="number"
                             name="invoice"
                             value={invoice || ''}
@@ -142,7 +142,7 @@ const SimpleForm = () => {
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <DatePicker
                                 value={date}
-                                onChange={e => handleDateChange(e)}
+                                onChange={(e) => handleDateChange(e)}
                                 renderInput={(props) => (
                                     <TextField
                                         {...props}
@@ -157,7 +157,7 @@ const SimpleForm = () => {
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <DatePicker
                                 value={Payment}
-                                onChange={e => handlePaymentChange(e)}
+                                onChange={(e) => handlePaymentChange(e)}
                                 renderInput={(props) => (
                                     <TextField
                                         {...props}
