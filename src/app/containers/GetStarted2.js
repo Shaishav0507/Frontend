@@ -59,6 +59,7 @@ const Wrapper = styled.div`
 // }
 
 const GetStarted2 = (props) => {
+    console.log(props)
     return (
         <Conatainer>
             <Wrapper>

@@ -24,7 +24,7 @@ const TopSellingTable = () => {
     return (
         <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
             <CardHeader>
-                <Title>Activities Done</Title>
+                <Title>OverView</Title>
             </CardHeader>
             <Box overflow="auto">
                 <LineChart

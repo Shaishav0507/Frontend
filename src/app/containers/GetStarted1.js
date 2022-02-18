@@ -178,6 +178,7 @@ const GetStarted1 = () => {
                 >
                     <Link
                         to="/onboarding"
+                        params={{fname:"test"}}
                         style={{
                             color: 'white',
                             fontWeight: 'bold',
