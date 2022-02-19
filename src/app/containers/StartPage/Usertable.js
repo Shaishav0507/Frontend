@@ -76,7 +76,7 @@ export class Usertable extends Component {
         let editStartClose = () => this.setState({ editStartShow: false })
 
         return (
-            <Box width="100%" overflow="auto">
+            <Box width="120%" overflow="auto">
                 <StyledTable>
                     <TableHead>
                         <TableRow>

@@ -76,7 +76,7 @@ export class Usersform extends Component {
                                 label="First Name"
                                 type="text"
                                 name="Name"
-                                //   value={Name || ''}
+                                //   value={fname}
                                 validators={['required']}
                                 errorMessages={['this field is required']}
                             />
@@ -84,7 +84,7 @@ export class Usersform extends Component {
                                 label="Last Name"
                                 type="text"
                                 name="gst"
-                                //   value={gst || ''}
+                                //   value={lname || ''}
                             />
                             <TextField
                                 label="Bussiness"
@@ -199,7 +199,7 @@ export class Usersform extends Component {
                         color="primary"
                         variant="contained"
                         type="submit"
-                        onClick={() => this.setState({ addStartShow: true })}
+                        //     onClick={() => this.setState({ addStartShow: true })}
                     >
                         <Icon>add</Icon>
                         <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
