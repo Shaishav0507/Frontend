@@ -39,7 +39,7 @@ export class VendorTable extends Component {
         const { vend } = this.state
         //let addModalClose=()=>this.setState({addModalShow:false});
         return (
-            <div style={{ backgroundColor: '#B4CFB0', height: '100vh' }}>
+            <div>
                 <ButtonToolbar>
                     <Button
                         variant="primary"

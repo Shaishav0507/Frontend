@@ -1,11 +1,38 @@
-// import { Table } from 'react-bootstrap'
 import React, { Component } from 'react'
-// import { Button, ButtonToolbar } from 'react-bootstrap'
-import { Addstart } from './Addstart'
-// import { Editstart } from './Editstart'
-// import { GetStarted1 } from '../GetStarted1'
+import {
+    Table,
+    TableHead,
+    TableCell,
+    TableBody,
+    IconButton,
+    Icon,
+    TableRow,
+} from '@mui/material'
+import { Box, styled } from '@mui/system'
+import { Editstart } from './Editstart'
+import { Button, ButtonToolbar } from 'react-bootstrap'
 
-export class start extends Component {
+const StyledTable = styled(Table)(({ theme }) => ({
+    whiteSpace: 'pre',
+    '& thead': {
+        '& tr': {
+            '& th': {
+                paddingLeft: 0,
+                paddingRight: 0,
+            },
+        },
+    },
+    '& tbody': {
+        '& tr': {
+            '& td': {
+                paddingLeft: 0,
+                textTransform: 'capitalize',
+            },
+        },
+    },
+}))
+
+export class Usertable extends Component {
     constructor(props) {
         super(props)
         this.state = { deps: [], addStartShow: false, editStartShow: false }
@@ -45,66 +72,35 @@ export class start extends Component {
             ststate,
             stcode,
         } = this.state
-        let addStartClose = () => this.setState({ addStartShow: false })
+        //    let addStartClose = () => this.setState({ addStartShow: false })
         let editStartClose = () => this.setState({ editStartShow: false })
+
         return (
-            <div style={{ marginTop: '20px' }}>
-                <Addstart />
-                {/* <ButtonToolbar>
-                    <Button
-                        style={{
-                            top: '0',
-                            right: '40px',
-                            position: 'absolute',
-                            marginTop: '20px',
-                            marginRight: '40px',
-                        }}
-                        variant="danger"
-                        onClick={() => this.setState({ addStartShow: true })}
-                    >
-                        Add Button
-                    </Button>
-                    <Addstart
-                        show={this.state.addStartShow}
-                        onHide={addStartClose}
-                    />
-                </ButtonToolbar> */}
-                {/* <Table
-                    // className="mt-4"
-                    variant="dark"
-                    striped
-                    bordered
-                    hover
-                    style={{
-                        // position: 'absolute',
-                        marginLeft: '60px',
-                        marginTop: '80px',
-                        width: '90%',
-                    }}
-                >
-                    <thead>
-                        <tr style={{ textAlign: 'center' }}>
-                            <th>Sr. No.</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Business Name</th>
-                            <th>Address</th>
-                            <th>State</th>
-                            <th>State Code</th>
-                            <th>Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <Box width="100%" overflow="auto">
+                <StyledTable>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Id</TableCell>
+                            <TableCell>First Name</TableCell>
+                            <TableCell>Last Name</TableCell>
+                            <TableCell>Bussiness</TableCell>
+                            <TableCell>Address</TableCell>
+                            <TableCell>State</TableCell>
+                            <TableCell>State Code</TableCell>
+                            <TableCell>Options</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
                         {deps.map((dep) => (
-                            <tr key={dep.id}>
-                                <td>{dep.id}</td>
-                                <td>{dep.fname}</td>
-                                <td>{dep.lname}</td>
-                                <td>{dep.business}</td>
-                                <td>{dep.address}</td>
-                                <td>{dep.state}</td>
-                                <td>{dep.code}</td>
-                                <td>
+                            <TableRow key={dep.id}>
+                                <TableCell>{dep.id}</TableCell>
+                                <TableCell>{dep.fname}</TableCell>
+                                <TableCell>{dep.lname}</TableCell>
+                                <TableCell>{dep.business}</TableCell>
+                                <TableCell>{dep.address}</TableCell>
+                                <TableCell>{dep.state}</TableCell>
+                                <TableCell>{dep.code}</TableCell>
+                                <TableCell>
                                     <ButtonToolbar>
                                         <Button
                                             className="mr-2"
@@ -147,12 +143,12 @@ export class start extends Component {
                                             stcode={stcode}
                                         />
                                     </ButtonToolbar>
-                                </td>
-                            </tr>
+                                </TableCell>
+                            </TableRow>
                         ))}
-                    </tbody>
-                </Table> */}
-            </div>
+                    </TableBody>
+                </StyledTable>
+            </Box>
         )
     }
 }

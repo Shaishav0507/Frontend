@@ -1,5 +1,9 @@
+import { Box } from '@mui/material'
+import { SimpleCard } from 'app/components'
 import React, { Component } from 'react'
-import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
+// import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
+import { Usersform } from './Usersform'
+import { Usertable } from './Usertable'
 
 export class Addstart extends Component {
     constructor(props) {
@@ -38,7 +42,14 @@ export class Addstart extends Component {
     render() {
         return (
             <div className="container">
-                <Modal
+                <SimpleCard title="Users">
+                    <Usersform />
+                </SimpleCard>
+                <Box py="12px" />
+                <SimpleCard title="Current Users">
+                    <Usertable />
+                </SimpleCard>
+                {/* <Modal
                     {...this.props}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
@@ -151,7 +162,7 @@ export class Addstart extends Component {
                             Close
                         </Button>
                     </Modal.Footer>
-                </Modal>
+                </Modal> */}
             </div>
         )
     }
