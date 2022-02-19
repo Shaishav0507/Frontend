@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Table } from 'react-bootstrap'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 // import { SimpleForm } from './../forms/SimpleForm';
+import { EditVendor } from './EditVendor'
 
 export class VendorTable extends Component {
     constructor(props) {
         super(props)
         this.state = {
             vend: [],
-            // addModalShow:false
+            // addModalShow:false,
+            editModalShow: false,
         }
     }
 
@@ -36,7 +38,8 @@ export class VendorTable extends Component {
         }
     }
     render() {
-        const { vend } = this.state
+        const { vend, venid, venname, add, gst, email, pan, contact, acc } = this.state
+        let editModalClose = () => this.setState({ editModalShow: false })
         //let addModalClose=()=>this.setState({addModalShow:false});
         return (
             <div style={{ backgroundColor: '#B4CFB0', height: '100vh' }}>
@@ -92,17 +95,19 @@ export class VendorTable extends Component {
                                         <Button
                                             className="mr-2"
                                             variant="info"
-                                            // onClick={() =>
-                                            //     this.setState({
-                                            //         editModalShow: true,
-                                            //         empid: emp.EmployeeId,
-                                            //         empname: emp.EmployeeName,
-                                            //         depmt: emp.Department,
-                                            //         photofilename:
-                                            //             emp.PhotoFileName,
-                                            //         doj: emp.DateOfJoining,
-                                            //     })
-                                            // }
+                                            onClick={() =>
+                                                this.setState({
+                                                    editModalShow: true,
+                                                    venid: ven.VendorId,
+                                                    venname: ven.Name,
+                                                    add: ven.Address,
+                                                    gst: ven.GST,
+                                                    email: ven.Email,
+                                                    pan: ven.Pan,
+                                                    contact: ven.Contact,
+                                                    acc: ven.Bank,
+                                                })
+                                            }
                                         >
                                             Edit
                                         </Button>
@@ -115,6 +120,18 @@ export class VendorTable extends Component {
                                         >
                                             Delete
                                         </Button>
+                                        <EditVendor
+                                            show={this.state.editModalShow}
+                                            onHide={editModalClose}
+                                            venid={venid}
+                                            venname={venname}
+                                            add={add}
+                                            gst={gst}
+                                            email={email}
+                                            pan={pan}
+                                            contact={contact}
+                                            acc={acc}
+                                        />
                                     </ButtonToolbar>
                                 </td>
                             </tr>

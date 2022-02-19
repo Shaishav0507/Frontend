@@ -1,185 +1,192 @@
-import {
-    Button,
-    Icon,
-    Grid,
-    FormControlLabel,
-    Checkbox,
-    // InputAdornment,
-    // IconButton,
-    Fab,
-} from '@mui/material'
-import { styled } from '@mui/system'
-import { Span } from 'app/components/Typography'
-import React, { useState, useEffect } from 'react'
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
-import AdapterDateFns from '@mui/lab/AdapterDateFns'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import { DatePicker } from '@mui/lab'
-import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined'
+import React, { Component } from 'react'
+import { Modal, Button, Row, Col, Form, Image } from 'react-bootstrap'
 
-const TextField = styled(TextValidator)(() => ({
-    width: '100%',
-    marginBottom: '16px',
-}))
+export class SimpleForm extends Component {
+    constructor(props) {
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFileSelected = this.handleFileSelected.bind(this)
+    }
 
-const SimpleForm = () => {
-    const [state, setState] = useState({
-        date: new Date(),
-        Name: '',
-        Payment: new Date(),
-        invoice: '',
-        amount: '',
-    })
+    photoname = 'anonymous.png'
+    imagesrc = 'http://localhost:8000/media/' + this.photoname
 
-    useEffect(() => {
-        ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-            console.log(value)
-
-            if (value !== state.password) {
-                return false
-            }
-            return true
+    handleSubmit(event) {
+        event.preventDefault()
+        fetch('http://localhost:8000/invoice/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                InvoiceId: null,
+                Name: event.target.Name.value,
+                Invoice_no: event.target.Invoice_no.value,
+                Invoice_Date: event.target.Invoice_Date.value,
+                Payment_Date: event.target.Payment_Date.value,
+                Amount: event.target.Amount.value,
+                Photo: this.photoname,
+            }),
         })
-        return () => ValidatorForm.removeValidationRule('isPasswordMatch')
-    }, [state.password])
-
-    const handleSubmit = (event) => {
-        // console.log("submitted");
-        // console.log(event);
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    alert(result)
+                },
+                (error) => {
+                    alert('Failed')
+                }
+            )
     }
 
-    const handleChange = (event) => {
-        event.persist()
-        setState({
-            ...state,
-            [event.target.name]: event.target.value,
+    handleFileSelected(event) {
+        event.preventDefault()
+        this.photoname = event.target.files[0].name
+        const formData = new FormData()
+        formData.append(
+            'myFile',
+            event.target.files[0],
+            event.target.files[0].name
+        )
+
+        fetch('http://localhost:8000/invoice/SaveFile/', {
+            method: 'POST',
+            body: formData,
         })
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    this.imagesrc = 'http://localhost:8000/media/' + result
+                },
+                (error) => {
+                    alert('Failed')
+                }
+            )
     }
 
-    const handleDateChange = (date) => {
-        setState({ ...state, date })
+    render() {
+        return (
+            <div className="container">
+                <Modal
+                    {...this.props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <Modal.Header clooseButton>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            Add Invoice
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Row>
+                            <Col sm={6}>
+                                <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlId="Name">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control
+                                            style={{
+                                                width: '190px',
+                                                marginRight: '20px',
+                                                borderRadius: '15px',
+                                            }}
+                                            type="text"
+                                            name="Name"
+                                            required
+                                            placeholder="Name"
+                                        />
+                                    </Form.Group>
+
+                                    <Form.Group controlId="Invoice_no">
+                                        <Form.Label>Invoice_no</Form.Label>
+                                        <Form.Control
+                                            style={{
+                                                width: '190px',
+                                                marginRight: '20px',
+                                                borderRadius: '15px',
+                                            }}
+                                            type="text"
+                                            name="Invoice_no"
+                                            required
+                                            placeholder="Invoice_no"
+                                        />
+                                    </Form.Group>
+
+                                    <Form.Group controlId="Invoice_Data">
+                                        <Form.Label>Invoice_Data</Form.Label>
+                                        <Form.Control
+                                            style={{
+                                                width: '190px',
+                                                marginRight: '20px',
+                                                borderRadius: '15px',
+                                            }}
+                                            type="date"
+                                            name="Invoice_Data"
+                                            required
+                                            placeholder="Invoice_Data"
+                                        />
+                                    </Form.Group>
+
+                                    <Form.Group controlId="Payment_Data">
+                                        <Form.Label>Payment_Data</Form.Label>
+                                        <Form.Control
+                                            style={{
+                                                width: '190px',
+                                                marginRight: '20px',
+                                                borderRadius: '15px',
+                                            }}
+                                            type="date"
+                                            name="Payment_Data"
+                                            required
+                                            placeholder="Payment_Data"
+                                        />
+                                    </Form.Group>
+
+                                    <Form.Group controlId="Amount">
+                                        <Form.Label>Amount</Form.Label>
+                                        <Form.Control
+                                            style={{
+                                                width: '190px',
+                                                marginRight: '20px',
+                                                borderRadius: '15px',
+                                            }}
+                                            type="text"
+                                            name="Amount"
+                                            required
+                                            placeholder="Amount"
+                                        />
+                                    </Form.Group>
+
+                                    <Form.Group>
+                                        <Button variant="primary" type="submit" style={{ marginTop: '10px' }}>
+                                            Add Invoices
+                                        </Button>
+                                    </Form.Group>
+                                </Form>
+                            </Col>
+
+                            <Col sm={6}>
+                                <Image
+                                    width="200px"
+                                    height="200px"
+                                    src={this.imagesrc}
+                                />
+                                <input
+                                    onChange={this.handleFileSelected}
+                                    type="File"
+                                />
+                            </Col>
+                        </Row>
+                    </Modal.Body>
+
+                    <Modal.Footer>
+                        <Button variant="danger" onClick={this.props.onHide}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        )
     }
-    const handlePaymentChange = (Payment) => {
-        setState({ ...state, Payment })
-    }
-
-    const { Name, invoice, amount, date, Payment } = state
-
-    // const handleFileUpload = () => {}
-    return (
-        <div>
-            <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
-                <Grid container spacing={6}>
-                    <Grid item lg={6} md={4} sm={12} xs={12} sx={{ mt: 2 }}>
-                        {/* <TextField
-                            label="Add a Customer"
-                            onChange={handleChange}
-                            name="Name"
-                            type="file"
-                            style={{}}
-                            value={Name || ''}
-                            validators={['required']}
-                            errorMessages={['this field is required']}
-                        /> */}
-                        <label htmlFor="upload-photo">
-                            <input
-                                style={{ display: 'none' }}
-                                id="upload-photo"
-                                name="upload-photo"
-                                type="file"
-                            />
-
-                            <Fab
-                                color="secondary"
-                                size="small"
-                                component="span"
-                                aria-label="add"
-                                variant="extended"
-                                style={{
-                                    marginTop: '30px',
-                                    marginLeft: '140px',
-                                    marginBottom: '70px',
-                                }}
-                            >
-                                <PersonAddOutlinedIcon /> Upload photo
-                            </Fab>
-                        </label>
-
-                        <TextField
-                            label="₹ Amount"
-                            onChange={(e) => handleChange(e)}
-                            type="number"
-                            name="amount"
-                            value={amount || ''}
-                            validators={['required']}
-                            errorMessages={['this field is required']}
-                        />
-                        <FormControlLabel
-                            control={<Checkbox />}
-                            label="I have read and agree to the terms of service."
-                        />
-                    </Grid>
-
-                    <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-                        <TextField
-                            label="Name"
-                            onChange={(e) => handleChange(e)}
-                            type="text"
-                            name="Name"
-                            value={Name || ''}
-                            validators={['required']}
-                            errorMessages={['this field is required']}
-                        />
-                        <TextField
-                            label="Invoice Number"
-                            onChange={(e) => handleChange(e)}
-                            type="number"
-                            name="invoice"
-                            value={invoice || ''}
-                            validators={['required']}
-                            errorMessages={['this field is required']}
-                        />
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DatePicker
-                                value={date}
-                                onChange={(e) => handleDateChange(e)}
-                                renderInput={(props) => (
-                                    <TextField
-                                        {...props}
-                                        // variant="Outlined"
-                                        id="mui-pickers-date"
-                                        label="Invoice Date"
-                                        sx={{ mb: 2, width: '100%' }}
-                                    />
-                                )}
-                            />
-                        </LocalizationProvider>
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <DatePicker
-                                value={Payment}
-                                onChange={(e) => handlePaymentChange(e)}
-                                renderInput={(props) => (
-                                    <TextField
-                                        {...props}
-                                        // variant="Outlined"
-                                        id="mui-pickers-date"
-                                        label="Payment Due"
-                                        sx={{ mb: 2, width: '100%' }}
-                                    />
-                                )}
-                            />
-                        </LocalizationProvider>
-                    </Grid>
-                </Grid>
-                <Button color="primary" variant="contained" type="submit">
-                    <Icon>send</Icon>
-                    <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
-                        Submit
-                    </Span>
-                </Button>
-            </ValidatorForm>
-        </div>
-    )
 }
-
-export default SimpleForm

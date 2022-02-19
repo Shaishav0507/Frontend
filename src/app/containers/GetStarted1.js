@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom-old'
 // import GetStarted2 from './GetStarted2'
 import Tax from './tax.png'
 
 import styled from 'styled-components'
+import { Component } from 'react'
 
 const Conatainer = styled.div`
     background: linear-gradient(
@@ -19,24 +20,42 @@ const Conatainer = styled.div`
     padding-top: 60px;
 `
 
-const GetStarted1 = () => {
-    const onChange = (e) =>
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-
-    const [formData, setFormData] = useState({
-        fname: '',
-        lname: '',
-        buss: '',
-        address: '',
-        state: '',
-        code: '',
-    })
-
-    const onSubmit = (e) => {
-        e.preventDefault()
+export class GetStarted1 extends Component {
+    constructor(props) {
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    const { fname, lname, buss, address, state, code } = formData
+    handleSubmit(event) {
+        event.preventDefault()
+        fetch('http://localhost:8000/api/start/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: null,
+                fname: event.target.fname.value,
+                lname: event.target.lname.value,
+                business: event.target.business.value,
+                address: event.target.address.value,
+                state: event.target.state.value,
+                code: event.target.code.value,
+            }),
+        })
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    alert(result)
+                },
+                (error) => {
+                    alert('Failed')
+                }
+            )
+    }
+
+    render() {
     return (
         <Conatainer>
             <img
@@ -52,10 +71,10 @@ const GetStarted1 = () => {
             />
             <h1>Welcome to TaxRx !!</h1>
             <p>Send the Invoice or File GST Return</p>
-            <form onSubmit={(e) => onSubmit(e)}>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group d-flex">
                     <input
-                        className="  form-control"
+                        className="form-control"
                         style={{
                             width: '190px',
                             marginRight: '20px',
@@ -64,8 +83,6 @@ const GetStarted1 = () => {
                         type="text"
                         placeholder="First Name"
                         name="fname"
-                        value={fname}
-                        onChange={(e) => onChange(e)}
                         required
                     />
                     <input
@@ -74,8 +91,6 @@ const GetStarted1 = () => {
                         type="text"
                         placeholder="Last Name"
                         name="lname"
-                        value={lname}
-                        onChange={(e) => onChange(e)}
                         required
                     />
                 </div>
@@ -87,8 +102,6 @@ const GetStarted1 = () => {
                         type="text"
                         placeholder="Bussiness!"
                         name="buss"
-                        value={buss}
-                        onChange={(e) => onChange(e)}
                         required
                     />
                 </div>
@@ -100,8 +113,6 @@ const GetStarted1 = () => {
                         type="text"
                         placeholder="Address !!"
                         name="address"
-                        value={address}
-                        onChange={(e) => onChange(e)}
                         required
                     />
                 </div>
@@ -112,8 +123,6 @@ const GetStarted1 = () => {
                         aria-label="form-select-lg example"
                         style={{ width: '400px', borderRadius: '15px' }}
                         name="state"
-                        value={state}
-                        onChange={(e) => onChange(e)}
                     >
                         <option value="AN">Andaman and Nicobar Islands</option>
                         <option value="AP">Andhra Pradesh</option>
@@ -162,8 +171,6 @@ const GetStarted1 = () => {
                         type="number"
                         placeholder="State Code !!"
                         name="code"
-                        value={code}
-                        onChange={(e) => onChange(e)}
                         required
                     />
                 </div>
@@ -193,5 +200,4 @@ const GetStarted1 = () => {
         </Conatainer>
     )
 }
-
-export default GetStarted1
+}
