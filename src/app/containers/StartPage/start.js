@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { Addstart } from './Addstart'
 import { Editstart } from './Editstart'
+// import { GetStarted1 } from '../GetStarted1'
 
 export class start extends Component {
     constructor(props) {
@@ -66,6 +67,10 @@ export class start extends Component {
                         show={this.state.addStartShow}
                         onHide={addStartClose}
                     />
+                    {/* <GetStarted1
+                        show={this.state.addStartShow}
+                        onHide={addStartClose}
+                    /> */}
                 </ButtonToolbar>
                 <Table
                     // className="mt-4"
@@ -76,7 +81,6 @@ export class start extends Component {
                     style={{
                         // position: 'absolute',
                         marginLeft: '60px',
-
                         marginTop: '80px',
                         width: '90%',
                     }}

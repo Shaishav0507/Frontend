@@ -1,9 +1,8 @@
 import React from 'react'
-import SimpleForm from './SimpleForm'
 // import StepperForm from './StepperForm'
-import PaginationTable from './../tables/PaginationTable'
+import { PaginationTable } from './../tables/PaginationTable'
 import { SimpleCard } from 'app/components'
-import { Box, styled } from '@mui/system'
+import { styled } from '@mui/system'
 // import { Button, Icon } from '@mui/material'
 // import { Span } from 'app/components/Typography'
 // import { Link } from 'react-router-dom-old'
@@ -50,11 +49,7 @@ const AppForm = () => {
                 </Button>
             </SimpleCard>
             <Box py="12px" /> */}
-            <SimpleCard title="Create Invoice">
-                <SimpleForm />
-            </SimpleCard>
-            <Box py="12px" />
-            <SimpleCard title="Pending Invoices">
+            <SimpleCard>
                 <PaginationTable />
             </SimpleCard>
         </Container>

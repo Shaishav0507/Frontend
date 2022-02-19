@@ -1,6 +1,6 @@
 import React from 'react'
 import SimpleVendForm from './SimpleVendForm'
-import VendorTable from './../tables/VendorTable'
+import { VendorTable } from './../tables/VendorTable'
 import { SimpleCard } from 'app/components'
 import { Box, styled } from '@mui/system'
 // import { Button, Icon } from '@mui/material'

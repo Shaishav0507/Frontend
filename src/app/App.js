@@ -10,10 +10,11 @@ import Activate from './containers/Activate'
 import ResetPassword from './containers/ResetPassword'
 import ResetPasswordConfirm from './containers/ResetPasswordConfirm'
 import { start } from './containers/StartPage/start'
+import { VendorTable } from './containers/Vendor/VendorTable'
 
 import Layout from './hocs/Layout'
 import store from './store'
-import GetStarted1 from './containers/GetStarted1'
+import { GetStarted1 } from './containers/GetStarted1'
 import GetStarted2 from './containers/GetStarted2'
 import Dashboard from './containers/Dashboard'
 
@@ -24,6 +25,7 @@ const App = () => {
                 <Layout>
                     <Switch>
                         <Route exact path="/users" component={start} />
+                        <Route exact path="/customers" component={VendorTable} />
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={Signup} />

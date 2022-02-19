@@ -80,16 +80,16 @@ const DoughnutChart = ({ height, color = [] }) => {
                 },
                 data: [
                     {
-                        value: 30,
-                        name: 'Rent Expenses',
-                    },
-                    {
                         value: 10,
                         name: 'Repair & Manintainance',
                     },
                     {
                         value: 20,
                         name: 'Meals & Entertainment',
+                    },
+                    {
+                        value: 30,
+                        name: 'Rent Expenses',
                     },
                     {
                         value: 20,

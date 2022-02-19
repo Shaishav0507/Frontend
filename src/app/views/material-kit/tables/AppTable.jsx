@@ -1,6 +1,6 @@
 import React from 'react'
 import SimpleTable from './SimpleTable'
-import PaginationTable from './PaginationTable'
+import { PaginationTable } from './PaginationTable'
 import { Breadcrumb, SimpleCard } from 'app/components'
 import { Box, styled } from '@mui/system'
 
