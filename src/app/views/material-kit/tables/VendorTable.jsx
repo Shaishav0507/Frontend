@@ -1,30 +1,57 @@
 import React, { Component } from 'react'
-import { Table } from 'react-bootstrap'
+import {
+    Table,
+    TableHead,
+    TableCell,
+    TableBody,
+    TableRow,
+    Icon,
+} from '@mui/material'
+import { Box, styled } from '@mui/system'
+import { EditVendor } from './EditVendor'
 import { Button, ButtonToolbar } from 'react-bootstrap'
-// import { SimpleForm } from './../forms/SimpleForm';
+
+const StyledTable = styled(Table)(({ theme }) => ({
+    whiteSpace: 'pre',
+    '& thead': {
+        '& tr': {
+            '& th': {
+                paddingLeft: 0,
+                paddingRight: 0,
+            },
+        },
+    },
+    '& tbody': {
+        '& tr': {
+            '& td': {
+                paddingLeft: 0,
+                whiteSpace: "nowrap",
+                overflow: "auto",
+                // textOverflow: "ellipsis",
+                textTransform: 'capitalize',
+            },
+        },
+    },
+}))
 
 export class VendorTable extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            vend: [],
-            // addModalShow:false
-        }
+        this.state = { deps: [], addStartShow: false, editStartShow: false }
     }
 
     refreshList() {
         fetch('http://localhost:8000/vendor/')
             .then((response) => response.json())
             .then((data) => {
-                this.setState({ vend: data })
+                this.setState({ deps: data })
             })
     }
 
     componentDidMount() {
         this.refreshList()
     }
-
-    deleteVen(VendorId) {
+    deleteDep(VendorId) {
         if (window.confirm('Are you sure?')) {
             fetch('http://localhost:8000/vendor/' + VendorId, {
                 method: 'DELETE',
@@ -33,95 +60,103 @@ export class VendorTable extends Component {
                     'Content-Type': 'application/json',
                 },
             })
+            window.location.reload(true)
         }
     }
-    render() {
-        const { vend } = this.state
-        //let addModalClose=()=>this.setState({addModalShow:false});
-        return (
-            <div>
-                <ButtonToolbar>
-                    <Button
-                        variant="primary"
-                        onClick={() => this.setState({ addModalShow: true })}
-                    >
-                        Add Customer
-                    </Button>
 
-                    {/* <SimpleForm show={this.state.addModalShow}
-                    onHide={addModalClose}/> */}
-                </ButtonToolbar>
-                <Table
-                    variant="dark"
-                    striped
-                    bordered
-                    hover
-                    style={{
-                        // position: 'absolute',
-                        marginLeft: '30px',
-                        marginTop: '30px',
-                        width: '95%',
-                    }}
-                >
-                    <thead>
-                        <tr style={{ textAlign: 'center' }}>
-                            <th>VendorId</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>GST No.</th>
-                            <th>Email</th>
-                            <th>PAN No.</th>
-                            <th>Contact</th>
-                            <th>Account No.</th>
-                            <th>Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {vend.map((ven) => (
-                            <tr key={ven.VendorId}>
-                                <td>{ven.VendorId}</td>
-                                <td>{ven.Name}</td>
-                                <td>{ven.Address}</td>
-                                <td>{ven.GST}</td>
-                                <td>{ven.Email}</td>
-                                <td>{ven.Pan}</td>
-                                <td>{ven.Contact}</td>
-                                <td>{ven.Bank}</td>
-                                <td>
+    render() {
+        const {
+            deps,
+            Id,
+            name,
+            add,
+            gst,
+            email,
+            Pan,
+            contact,
+            acc,
+        } = this.state
+        //    let addStartClose = () => this.setState({ addStartShow: false })
+        let editStartClose = () => this.setState({ editStartShow: false })
+
+        return (
+            <Box width="100%" overflow="auto">
+                <StyledTable style={{tableLayout: "fixed", whiteSpace: "pre"}}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell style={{width: "80px"}}>VendorId</TableCell>
+                            <TableCell style={{width: "12%"}}>Name</TableCell>
+                            <TableCell style={{width: "12%"}}>Address</TableCell>
+                            <TableCell style={{width: "120px"}}>GST No.</TableCell>
+                            <TableCell style={{width: "16%"}}>Email</TableCell>
+                            <TableCell style={{width: "110px"}}>PAN</TableCell>
+                            <TableCell style={{width: "92px"}}>Contact No.</TableCell>
+                            <TableCell>Account No.</TableCell>
+                            <TableCell>Options</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {deps.map((dep) => (
+                            <TableRow key={dep.VendorId}>
+                                <TableCell>{dep.VendorId}</TableCell>
+                                <TableCell>{dep.Name}</TableCell>
+                                <TableCell>{dep.Address}</TableCell>
+                                <TableCell>{dep.GST}</TableCell>
+                                <TableCell>{dep.Email}</TableCell>
+                                <TableCell>{dep.Pan}</TableCell>
+                                <TableCell>{dep.Contact}</TableCell>
+                                <TableCell>{dep.Bank}</TableCell>
+                                <TableCell>
                                     <ButtonToolbar>
                                         <Button
                                             className="mr-2"
                                             variant="info"
-                                            // onClick={() =>
-                                            //     this.setState({
-                                            //         editModalShow: true,
-                                            //         empid: emp.EmployeeId,
-                                            //         empname: emp.EmployeeName,
-                                            //         depmt: emp.Department,
-                                            //         photofilename:
-                                            //             emp.PhotoFileName,
-                                            //         doj: emp.DateOfJoining,
-                                            //     })
-                                            // }
+                                            onClick={() =>
+                                                this.setState({
+                                                    editStartShow: true,
+                                                    Id: dep.VendorId,
+                                                    name: dep.Name,
+                                                    add: dep.Address,
+                                                    gst: dep.GST,
+                                                    email: dep.Email,
+                                                    Pan: dep.Pan,
+                                                    contact: dep.Contact,
+                                                    acc:dep.Bank,
+                                                })
+                                            }
                                         >
-                                            Edit
+                                            <Icon>edit</Icon>
                                         </Button>
+
                                         <Button
                                             className="mr-2"
                                             variant="danger"
                                             onClick={() =>
-                                                this.deleteVen(vend.VendorId)
+                                                this.deleteDep(dep.VendorId)
                                             }
                                         >
-                                            Delete
+                                            <Icon>delete</Icon>
                                         </Button>
+
+                                        <EditVendor
+                                            show={this.state.editStartShow}
+                                            onHide={editStartClose}
+                                            Id={Id}
+                                            name={name}
+                                            add={add}
+                                            gst={gst}
+                                            email={email}
+                                            Pan={Pan}
+                                            contact={contact}
+                                            acc={acc}
+                                        />
                                     </ButtonToolbar>
-                                </td>
-                            </tr>
+                                </TableCell>
+                            </TableRow>
                         ))}
-                    </tbody>
-                </Table>
-            </div>
+                    </TableBody>
+                </StyledTable>
+            </Box>
         )
     }
 }

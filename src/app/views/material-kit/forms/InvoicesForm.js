@@ -10,28 +10,27 @@ import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { ValidatorForm} from 'react-material-ui-form-validator'
 
-export class SimpleVendForm extends Component {
+export class InvoicesForm extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/vendor/', {
+        fetch('http://localhost:8000/invoice/', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                VendorId: null,
+                InvoiceId: null,
                 Name: event.target.Name.value,
-                Address: event.target.Address.value,
-                GST: event.target.GST.value,
-                Email: event.target.Email.value,
-                Pan: event.target.Pan.value,
-                Contact: event.target.Contact.value,
-                Bank:event.target.Bank.value,
+                Invoice_no: event.target.Invoice_no.value,
+                Invoice_Date: event.target.Invoice_Date.value,
+                Payment_Date: event.target.Payment_Date.value,
+                Amount: event.target.Amount.value,
+              
             }),
         })
             .then((res) => res.json())
@@ -70,7 +69,7 @@ export class SimpleVendForm extends Component {
                                     name="Name"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="Address">
+                            <Form.Group controlId="Invoice_no">
                                 <Form.Control
                                     style={{
                                         width: '100%',
@@ -78,21 +77,22 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="Address"
-                                    name="Address"
+                                    placeholder="InvoiceNo"
+                                    name="InvoiceNo"
                                 />
                                 
                             </Form.Group>
-                            <Form.Group controlId="GST">
+                            <Form.Group controlId="Invoice_Date">
+                            <Form.Label>Invoice Date</Form.Label>
                                 <Form.Control
                                     style={{
                                         width: '100%',
                                         marginBottom: '16px',
                                     }}
                                     size="lg"
-                                    type="text"
-                                    placeholder="GST"
-                                    name="GST"
+                                    type="date"
+                                    placeholder="InvoiceDate"
+                                    name="InvoiceDate"
                                 />
                                 
                             </Form.Group>
@@ -103,59 +103,35 @@ export class SimpleVendForm extends Component {
                         </Grid>
 
                         <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-                            <Form.Group controlId="Email">
+                            <Form.Group controlId="Payment_Date">
+                            <Form.Label>Payment Date</Form.Label>
                                 <Form.Control
                                     style={{
                                         width: '100%',
                                         marginBottom: '16px',
                                     }}
                                     size="lg"
-                                    type="text"
-                                    placeholder="Email"
-                                    name="Email"
+                                    type="date"
+                                    placeholder="Payment Date"
+                                    name="Payment"
                                 />
                                 
                             </Form.Group>
                             
-                            <Form.Group controlId="Pan">
+                            <Form.Group controlId="Amount">
                                 <Form.Control
                                     style={{
                                         width: '100%',
                                         marginBottom: '16px',
                                     }}
                                     size="lg"
-                                    type="text"
-                                    placeholder="PAN No."
-                                    name="Pan"
+                                    type="number"
+                                    placeholder="Amount"
+                                    name="Amount"
                                 />
                                 
                             </Form.Group>
-                            <Form.Group controlId="Contact">
-                                <Form.Control
-                                    style={{
-                                        width: '100%',
-                                        marginBottom: '16px',
-                                    }}
-                                    size="lg"
-                                    type="text"
-                                    placeholder="Contact"
-                                    name="Contact"
-                                />
-                                
-                            </Form.Group>
-                            <Form.Group controlId="Bank">
-                                <Form.Control
-                                    style={{
-                                        width: '100%',
-                                        marginBottom: '16px',
-                                    }}
-                                    size="lg"
-                                    type="text"
-                                    placeholder="Account Number"
-                                    name="Banks"
-                                />
-                                
-                            </Form.Group>
+                          
                         </Grid>
                     </Grid>
                     <Button

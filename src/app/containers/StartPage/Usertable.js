@@ -4,9 +4,8 @@ import {
     TableHead,
     TableCell,
     TableBody,
-    IconButton,
-    Icon,
     TableRow,
+    Icon,
 } from '@mui/material'
 import { Box, styled } from '@mui/system'
 import { Editstart } from './Editstart'
@@ -58,6 +57,7 @@ export class Usertable extends Component {
                     'Content-Type': 'application/json',
                 },
             })
+            window.location.reload(true)
         }
     }
 
@@ -118,7 +118,7 @@ export class Usertable extends Component {
                                                 })
                                             }
                                         >
-                                            Edit
+                                            <Icon>edit</Icon>
                                         </Button>
 
                                         <Button
@@ -128,7 +128,7 @@ export class Usertable extends Component {
                                                 this.deleteDep(dep.id)
                                             }
                                         >
-                                            Delete
+                                            <Icon>delete</Icon>
                                         </Button>
 
                                         <Editstart
