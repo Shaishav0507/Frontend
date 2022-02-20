@@ -4,19 +4,11 @@ import {
     Grid,
     FormControlLabel,
     Checkbox,
-    // InputAdornment,
-    // IconButton,
 } from '@mui/material'
-import { styled } from '@mui/system'
 import { Span } from 'app/components/Typography'
 import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
-
-const TextField = styled(TextValidator)(() => ({
-    width: '100%',
-    marginBottom: '16px',
-}))
+import { ValidatorForm} from 'react-material-ui-form-validator'
 
 export class Usersform extends Component {
     constructor(props) {
@@ -63,16 +55,6 @@ export class Usersform extends Component {
                 >
                     <Grid container spacing={6}>
                         <Grid item lg={6} md={4} sm={12} xs={12} sx={{ mt: 2 }}>
-                            {/* <TextField
-                             label="Add a Customer"
-                             onChange={handleChange}
-                             name="Name"
-                             type="file"
-                             style={{}}
-                             value={Name || ''}
-                             validators={['required']}
-                             errorMessages={['this field is required']}
-                         /> */}
                             <Form.Group controlId="fname">
                                 <Form.Control
                                     //  className=" mb-2 p-2"
@@ -85,14 +67,6 @@ export class Usersform extends Component {
                                     placeholder="First Name"
                                     name="Name"
                                 />
-                                {/* <TextField
-                                    label="First Name"
-                                    type="text"
-                                    name="Name"
-                                    //   value={fname}
-                                    validators={['required']}
-                                    errorMessages={['this field is required']}
-                                /> */}
                             </Form.Group>
                             <Form.Group controlId="lname">
                                 <Form.Control
@@ -105,12 +79,7 @@ export class Usersform extends Component {
                                     placeholder="Last Name"
                                     name="Name"
                                 />
-                                {/* <TextField
-                                    label="Last Name"
-                                    type="text"
-                                    name="gst"
-                                    //   value={lname || ''}
-                                /> */}
+                                
                             </Form.Group>
                             <Form.Group controlId="business">
                                 <Form.Control
@@ -123,14 +92,7 @@ export class Usersform extends Component {
                                     placeholder="Bussiness"
                                     name="Name"
                                 />
-                                {/* <TextField
-                                    label="Bussiness"
-                                    type="text"
-                                    name="pan"
-                                    //   value={pan || ''}
-                                    validators={['required']}
-                                    errorMessages={['this field is required']}
-                                /> */}
+                                
                             </Form.Group>
                             <FormControlLabel
                                 control={<Checkbox />}
@@ -150,26 +112,9 @@ export class Usersform extends Component {
                                     placeholder="Address"
                                     name="Name"
                                 />
-                                {/* <TextField
-                                    label="Address"
-                                    type="text"
-                                    name="address"
-                                    //   value={address || ''}
-                                    validators={['required']}
-                                    errorMessages={['this field is required']}
-                                /> */}
+                                
                             </Form.Group>
-                            {/* <TextField
-                              label="State"
-                              type="email"
-                              name="email"
-                              //   value={email || ''}
-                              validators={['required', 'isEmail']}
-                              errorMessages={[
-                                  'this field is required',
-                                  'email is not valid',
-                              ]}
-                            /> */}
+                            
                             <Form.Group controlId="state">
                                 <div className="  d-block d-flex flex-column">
                                     <select
@@ -253,15 +198,7 @@ export class Usersform extends Component {
                                     placeholder="State Code"
                                     name="Name"
                                 />
-                                {/* <TextField
-                                    //  sx={{ mb: 2 }}
-                                    label="State Code"
-                                    type="text"
-                                    name="monumber"
-                                    //   value={monumber || ''}
-
-                                    errorMessages={['this field is required']}
-                                /> */}
+                                
                             </Form.Group>
                         </Grid>
                     </Grid>
@@ -269,7 +206,7 @@ export class Usersform extends Component {
                         color="primary"
                         variant="contained"
                         type="submit"
-                        //     onClick={() => this.setState({ addStartShow: true })}
+                
                     >
                         <Icon>add</Icon>
                         <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
