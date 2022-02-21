@@ -78,23 +78,23 @@ const LineChart = ({ height, color = [] }) => {
         },
         series: [
             {
-                data: [30, 40, 20, 50, 40, 80, 90],
+                data: [30, 40, 20, 50, 40, 80, 90, 10, 40, 50, 20, 100],
                 type: 'line',
                 stack: 'This month',
                 name: 'This month',
                 smooth: true,
-                symbolSize: 4,
+                symbolSize: 6,
                 lineStyle: {
                     width: 5,
                 },
             },
             {
-                data: [20, 50, 15, 50, 30, 70, 95],
+                data: [20, 50, 15, 50, 30, 70, 95, 5,45, 70, 20, 50],
                 type: 'line',
                 stack: 'Last month',
                 name: 'Last month',
                 smooth: true,
-                symbolSize: 4,
+                symbolSize: 6,
                 lineStyle: {
                     width: 5,
                 },

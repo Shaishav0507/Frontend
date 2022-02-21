@@ -32,9 +32,6 @@ const AppForm = () => {
             <SimpleCard title="Current Invoices">
             <PaginationTable />
             </SimpleCard> 
-            {/* <SimpleCard>
-                <PaginationTable />
-            </SimpleCard> */}
         </Container>
     )
 }
