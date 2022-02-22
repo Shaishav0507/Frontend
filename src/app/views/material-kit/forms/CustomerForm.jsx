@@ -23,11 +23,11 @@ const Container = styled('div')(({ theme }) => ({
 const CustomerForm = () => {
     return (
         <Container>
-            <SimpleCard title="Create Vendor">
+            <SimpleCard title="Create Customer">
                 <SimpleCustForm />
             </SimpleCard>
             <Box py="12px" />
-            <SimpleCard title="Current Vendors">
+            <SimpleCard title="Current Customers">
                 <CustomerTable />
             </SimpleCard>
         </Container>

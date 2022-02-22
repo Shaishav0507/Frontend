@@ -10,7 +10,7 @@ const Conatainer = styled.div`
         to right,
         #ffffff 0%,
         #ffffff 35%,
-        #8080ff 65%,
+        #99ebff 50%,
         #1a1aff 100%
     );
     height: 100vh;

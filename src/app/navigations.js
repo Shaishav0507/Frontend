@@ -28,41 +28,15 @@ export const navigations = [
                 iconText: 'B',
             },
             {
-                name: 'Payments',
-                path: '/material/checkbox',
-                iconText: 'D',
-            },
-            {
-                name: 'Customers',
-                path: '/customers',
-                iconText: 'D',
-                // icon: 'people',
-            },
-        ],
-    },
-    {
-        name: 'Purchases',
-        icon: 'shopping',
-        children: [
-            {
-                name: 'Bills',
-                path: '/material/autocomplete',
-                iconText: 'A',
-            },
-            {
-                name: 'Receipts',
-                path: '/material/buttons',
-                iconText: 'B',
-            },
-            {
                 name: 'Vendors',
                 path: '/vendors',
                 iconText: 'C',
             },
             {
-                name: 'Vendors Invoices',
-                path: '/material/checkbox',
+                name: 'Customers',
+                path: '/customers',
                 iconText: 'D',
+                //icon: 'people',
             },
         ],
     },

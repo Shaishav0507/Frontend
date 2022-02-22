@@ -8,7 +8,6 @@ import { MatxMenu, MatxSearchBox } from 'app/components'
 
 import NotificationBar from '../../NotificationBar/NotificationBar'
 import { themeShadows } from 'app/components/MatxTheme/themeColors'
-import { NotificationProvider } from 'app/contexts/NotificationContext'
 import {
     Icon,
     IconButton,
@@ -119,9 +118,7 @@ const Layout1Topbar = () => {
                 </Box>
                 <Box display="flex" alignItems="center">
                     <MatxSearchBox />
-                    <NotificationProvider>
                         <NotificationBar />
-                    </NotificationProvider>
 
                     <MatxMenu
                         menuButton={
