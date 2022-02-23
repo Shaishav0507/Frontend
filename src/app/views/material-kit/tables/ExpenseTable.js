@@ -8,7 +8,7 @@ import {
     Icon,
 } from '@mui/material'
 import { Box, styled } from '@mui/system'
-import { Editstart } from './Editstart'
+import { EditExpense } from './EditExpense'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 const StyledTable = styled(Table)(({ theme }) => ({
@@ -25,20 +25,23 @@ const StyledTable = styled(Table)(({ theme }) => ({
         '& tr': {
             '& td': {
                 paddingLeft: 0,
+                whiteSpace: "nowrap",
+                overflow: "auto",
+                // textOverflow: "ellipsis",
                 textTransform: 'capitalize',
             },
         },
     },
 }))
 
-export class Usertable extends Component {
+export class ExpenseTable extends Component {
     constructor(props) {
         super(props)
         this.state = { deps: [], addStartShow: false, editStartShow: false }
     }
 
     refreshList() {
-        fetch('http://localhost:8000/api/start/')
+        fetch('http://localhost:8000/expense/')
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -48,9 +51,9 @@ export class Usertable extends Component {
     componentDidMount() {
         this.refreshList()
     }
-    deleteDep(StartId) {
+    deleteDep(ExpenseId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/api/start/' + StartId, {
+            fetch('http://localhost:8000/expense/' + ExpenseId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',
@@ -64,42 +67,30 @@ export class Usertable extends Component {
     render() {
         const {
             deps,
-            id,
-            stfname,
-            stlname,
-            stbusiness,
-            staddress,
-            ststate,
-            stcode,
+            Id,
+            cate,
+            amount,
         } = this.state
         //    let addStartClose = () => this.setState({ addStartShow: false })
         let editStartClose = () => this.setState({ editStartShow: false })
 
         return (
-            <Box width="120%" overflow="auto">
-                <StyledTable>
+            <Box width="100%" overflow="auto">
+                <StyledTable style={{tableLayout: "fixed", whiteSpace: "pre"}}>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Id</TableCell>
-                            <TableCell>First Name</TableCell>
-                            <TableCell>Last Name</TableCell>
-                            <TableCell>Bussiness</TableCell>
-                            <TableCell>Address</TableCell>
-                            <TableCell>State</TableCell>
-                            <TableCell>State Code</TableCell>
+                            <TableCell style={{width: "150px"}}>ExpenseId</TableCell>
+                            <TableCell style={{width: "25%"}}>Category</TableCell>
+                            <TableCell style={{width: "25%"}}>Amount</TableCell>
                             <TableCell>Options</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {deps.map((dep) => (
-                            <TableRow key={dep.StartId}>
-                                <TableCell>{dep.StartId}</TableCell>
-                                <TableCell>{dep.fname}</TableCell>
-                                <TableCell>{dep.lname}</TableCell>
-                                <TableCell>{dep.business}</TableCell>
-                                <TableCell>{dep.address}</TableCell>
-                                <TableCell>{dep.state}</TableCell>
-                                <TableCell>{dep.code}</TableCell>
+                            <TableRow key={dep.ExpenseId}>
+                                <TableCell>{dep.ExpenseId}</TableCell>
+                                <TableCell>{dep.Category}</TableCell>
+                                <TableCell>{dep.Amount}</TableCell>
                                 <TableCell>
                                     <ButtonToolbar>
                                         <Button
@@ -108,13 +99,9 @@ export class Usertable extends Component {
                                             onClick={() =>
                                                 this.setState({
                                                     editStartShow: true,
-                                                    id: dep.StartId,
-                                                    stfname: dep.fname,
-                                                    stlname: dep.lname,
-                                                    stbusiness: dep.business,
-                                                    staddress: dep.address,
-                                                    ststate: dep.state,
-                                                    stcode: dep.code,
+                                                    Id: dep.ExpenseId,
+                                                    cate: dep.Category,
+                                                    amount: dep.Amount,
                                                 })
                                             }
                                         >
@@ -125,22 +112,18 @@ export class Usertable extends Component {
                                             className="mr-2"
                                             variant="danger"
                                             onClick={() =>
-                                                this.deleteDep(dep.StartId)
+                                                this.deleteDep(dep.ExpenseId)
                                             }
                                         >
                                             <Icon>delete</Icon>
                                         </Button>
 
-                                        <Editstart
+                                        <EditExpense
                                             show={this.state.editStartShow}
                                             onHide={editStartClose}
-                                            id={id}
-                                            stfname={stfname}
-                                            stlname={stlname}
-                                            stbusiness={stbusiness}
-                                            staddress={staddress}
-                                            ststate={ststate}
-                                            stcode={stcode}
+                                            Id={Id}
+                                            cate={cate}
+                                            amount={amount}
                                         />
                                     </ButtonToolbar>
                                 </TableCell>

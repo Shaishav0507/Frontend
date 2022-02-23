@@ -24,6 +24,10 @@ const materialRoutes = [
         element: <AppButton />,
     },
     {
+        path: '/expenses',
+        element: <AppAutoComplete />,
+    },
+    {
         path: '/material/icons',
         element: <AppIcon />,
     },
@@ -50,10 +54,6 @@ const materialRoutes = [
     {
         path: '/material/slider',
         element: <AppSlider />,
-    },
-    {
-        path: '/material/autocomplete',
-        element: <AppAutoComplete />,
     },
     {
         path: '/material/expansion-panel',

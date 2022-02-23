@@ -1,8 +1,7 @@
 import React from 'react'
-import { Breadcrumb, SimpleCard } from 'app/components'
-import AutocompleteCombo from './AutocompleteCombo'
-import AsyncAutocomplete from './AsyncAutocomplete'
-import BadgeAutocomplete from './BadgeAutocomplete'
+import { SimpleCard } from 'app/components'
+import { AutocompleteCombo } from './AutocompleteCombo'
+import { ExpenseTable } from '../tables/ExpenseTable'
 import { Box, styled } from '@mui/system'
 
 const Container = styled('div')(({ theme }) => ({
@@ -21,24 +20,12 @@ const Container = styled('div')(({ theme }) => ({
 const AppAutoComplete = () => {
     return (
         <Container>
-            <div className="breadcrumb">
-                <Breadcrumb
-                    routeSegments={[
-                        { name: 'Material', path: '/material' },
-                        { name: 'Autocomplete' },
-                    ]}
-                />
-            </div>
-            <SimpleCard title="autocomplete combo">
+            <SimpleCard title="Expenses">
                 <AutocompleteCombo />
             </SimpleCard>
             <Box py="12px" />
-            <SimpleCard title="Asyncronous Autocomplete">
-                <AsyncAutocomplete></AsyncAutocomplete>
-            </SimpleCard>
-            <Box py="12px" />
-            <SimpleCard title="Asyncronous Autocomplete">
-                <BadgeAutocomplete></BadgeAutocomplete>
+            <SimpleCard title="Expense Table">
+                <ExpenseTable />
             </SimpleCard>
         </Container>
     )

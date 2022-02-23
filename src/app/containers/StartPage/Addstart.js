@@ -19,7 +19,7 @@ export class Addstart extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: null,
+                StartId: null,
                 fname: event.target.fname.value,
                 lname: event.target.lname.value,
                 business: event.target.business.value,

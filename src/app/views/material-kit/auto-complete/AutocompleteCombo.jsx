@@ -1,136 +1,89 @@
-import React, { Fragment } from 'react'
-import { TextField, Autocomplete } from '@mui/material'
-import { createFilterOptions } from '@mui/material/Autocomplete'
+import React, { Component, Fragment } from 'react'
+import { TextField, Autocomplete, Button, Icon } from '@mui/material'
 import { styled } from '@mui/system'
+import { Form } from 'react-bootstrap'
+import { Span } from 'app/components/Typography'
+import { ValidatorForm } from 'react-material-ui-form-validator'
 
-const AutoComplete = styled(Autocomplete)(() => ({
-    width: 300,
-    marginBottom: '16px',
-}))
-
-const suggestions = [
-    { label: 'Afghanistan' },
-    { label: 'Aland Islands' },
-    { label: 'Albania' },
-    { label: 'Algeria' },
-    { label: 'American Samoa' },
-    { label: 'Andorra' },
-    { label: 'Angola' },
-    { label: 'Anguilla' },
-    { label: 'Antarctica' },
-    { label: 'Antigua and Barbuda' },
-    { label: 'Argentina' },
-    { label: 'Armenia' },
-    { label: 'Aruba' },
-    { label: 'Australia' },
-    { label: 'Austria' },
-    { label: 'Azerbaijan' },
-    { label: 'Bahamas' },
-    { label: 'Bahrain' },
-    { label: 'Bangladesh' },
-    { label: 'Barbados' },
-    { label: 'Belarus' },
-    { label: 'Belgium' },
-    { label: 'Belize' },
-    { label: 'Benin' },
-    { label: 'Bermuda' },
-    { label: 'Bhutan' },
-    { label: 'Bolivia, Plurinational State of' },
-    { label: 'Bonaire, Sint Eustatius and Saba' },
-    { label: 'Bosnia and Herzegovina' },
-    { label: 'Botswana' },
-    { label: 'Bouvet Island' },
-    { label: 'Brazil' },
-    { label: 'British Indian Ocean Territory' },
-    { label: 'Brunei Darussalam' },
-]
-
-const filter = createFilterOptions()
-
-const AutocompleteCombo = () => {
-    const [value, setValue] = React.useState(null)
-
-    const handleChange = (event, newValue) => {
-        if (newValue && newValue.inputValue) {
-            setValue({
-                label: newValue.inputValue,
-            })
-            return
-        }
-        setValue(newValue)
+export class AutocompleteCombo extends Component {
+    constructor(props) {
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
-
-    const filterOptions = (options, params) => {
-        const filtered = filter(options, params)
-        if (params.inputValue !== '') {
-            filtered.push({
-                inputValue: params.inputValue,
-                label: `Add "${params.inputValue}"`,
-            })
-        }
-        return filtered
-    }
-
-    return (
-        <Fragment>
-            <AutoComplete
-                options={suggestions}
-                getOptionLabel={(option) => option.label}
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Combo box"
-                        variant="outlined"
-                        fullWidth
-                    />
-                )}
-            />
-
-            <AutoComplete
-                value={value}
-                onChange={handleChange}
-                filterOptions={filterOptions}
-                options={suggestions}
-                getOptionLabel={(option) => {
-                    // e.g value selected with enter, right from the input
-                    if (typeof option === 'string') {
-                        return option
-                    }
-                    if (option.inputValue) {
-                        return option.inputValue
-                    }
-                    return option.label
-                }}
-                renderOption={(option) => option.label}
-                style={{ width: 300 }}
-                freeSolo
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Free solo with text demo"
-                        variant="outlined"
-                        fullWidth
-                    />
-                )}
-            />
-
-            <AutoComplete
-                options={suggestions}
-                getOptionLabel={(option) => option.label}
-                getOptionDisabled={(option) =>
-                    option === suggestions[0] || option === suggestions[2]
+    handleSubmit(event) {
+        event.preventDefault()
+        fetch('http://localhost:8000/expense/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ExpenseId: null,
+                Category: event.target.Category.value,
+                Amount: event.target.Amount.value,
+            }),
+        })
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    alert(result)
+                },
+                (error) => {
+                    alert('Failed')
                 }
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Disabled option"
-                        variant="outlined"
-                        fullWidth
-                    />
-                )}
-            />
-        </Fragment>
-    )
-}
+            )
+    }
 
-export default AutocompleteCombo
+    render() {
+        return (
+            <Fragment>
+                <ValidatorForm
+                    onSubmit={this.handleSubmit}
+                    onError={() => null}
+                    {...this.props}
+                >
+                    <Form.Group controlId="Category">
+                        <div>
+                            <select
+                                class="form-select form-select-lg p-2"
+                                aria-label="form-select-lg example"
+                                style={{
+                                    width: '40%',
+                                    marginBottom: '16px',
+                                    color: 'gray',
+                                }}
+                                name="Category"
+                            >   
+                                <option disabled selected>Expenses</option>
+                                <option>Rent Expenses</option>
+                                <option>Vehicles</option>
+                                <option>Meals and Entertainment</option>
+                                <option>Repairs and Maintenance</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                    </Form.Group>
+                    <Form.Group controlId="Amount">
+                        <Form.Control
+                            style={{
+                                width: '40%',
+                                marginBottom: '16px',
+                            }}
+                            size="lg"
+                            type="text"
+                            placeholder="Amount"
+                            name="Amount"
+                        />
+                    </Form.Group>
+                    <Button color="primary" variant="contained" type="submit">
+                        <Icon>add</Icon>
+                        <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
+                            Add Expense
+                        </Span>
+                    </Button>
+                </ValidatorForm>
+            </Fragment>
+        )
+    }
+}

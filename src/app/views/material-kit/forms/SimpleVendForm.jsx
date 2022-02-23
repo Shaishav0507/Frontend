@@ -166,7 +166,7 @@ export class SimpleVendForm extends Component {
                     >
                         <Icon>add</Icon>
                         <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
-                            Add Customer
+                            Add Vendor
                         </Span>
                     </Button>
                 </ValidatorForm>
