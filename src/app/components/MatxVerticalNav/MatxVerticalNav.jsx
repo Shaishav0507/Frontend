@@ -5,6 +5,7 @@ import useSettings from 'app/hooks/useSettings'
 import { Paragraph, Span } from '../Typography'
 import { Icon, ButtonBase } from '@mui/material'
 import MatxVerticalNavExpansionPanel from './MatxVerticalNavExpansionPanel'
+import ArrowRight from '@mui/icons-material/ArrowRight'
 
 const ListLabel = styled(Paragraph)(({ theme, mode }) => ({
     fontSize: '12px',
@@ -61,14 +62,9 @@ const StyledText = styled(Span)(({ mode }) => ({
     display: mode === 'compact' && 'none',
 }))
 
-const BulletIcon = styled('div')(({ theme }) => ({
-    padding: '2px',
-    marginLeft: '24px',
-    marginRight: '8px',
-    overflow: 'hidden',
-    borderRadius: '300px',
-    background: theme.palette.text.primary,
-}))
+// const BulletIcon = styled('div')(({ theme }) => ({
+//
+// }))
 
 const BadgeValue = styled('div')(() => ({
     padding: '1px 8px',
@@ -150,7 +146,13 @@ const MatxVerticalNav = ({ items }) => {
                         <NavLink
                             to={item.path}
                             className={({ isActive }) =>
-                                isActive ? `navItemActive ${mode === 'compact' && 'compactNavItem'}` : `${mode === 'compact' && 'compactNavItem'}`
+                                isActive
+                                    ? `navItemActive ${
+                                          mode === 'compact' && 'compactNavItem'
+                                      }`
+                                    : `${
+                                          mode === 'compact' && 'compactNavItem'
+                                      }`
                             }
                         >
                             <ButtonBase
@@ -164,20 +166,28 @@ const MatxVerticalNav = ({ items }) => {
                                     </Icon>
                                 ) : (
                                     <Fragment>
-                                        <BulletIcon
-                                            className={`nav-bullet`}
-                                            sx={{
-                                                display:
-                                                    mode === 'compact' && 'none',
+                                        <ArrowRight
+                                            style={{
+                                                padding: '2px',
+                                                marginLeft: '44px',
+                                                marginRight: '8px',
+                                                overflow: 'hidden',
+                                                borderRadius: '300px',
                                             }}
+                                            // className={`nav-edit`}
+                                            // sx={{
+                                            //     display:
+                                            //         mode === 'compact' && 'none',
+                                            // }}
                                         />
                                         <Box
-                                            className="nav-bullet-text"
+                                            // className="nav-bullet-text"
                                             sx={{
                                                 ml: '20px',
                                                 fontSize: '11px',
                                                 display:
-                                                    mode !== 'compact' && 'none',
+                                                    mode !== 'compact' &&
+                                                    'none',
                                             }}
                                         >
                                             {item.iconText}
