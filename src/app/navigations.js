@@ -42,7 +42,7 @@ export const navigations = [
     },
     {
         name: 'Expenses',
-        path: '/dashboard/',
+        path: '/expenses/',
         icon: 'money',
     },
     {

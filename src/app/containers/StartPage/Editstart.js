@@ -15,7 +15,7 @@ export class Editstart extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: event.target.id.value,
+                StartId: event.target.StartId.value,
                 fname: event.target.fname.value,
                 lname: event.target.lname.value,
                 business: event.target.business.value,
@@ -53,7 +53,7 @@ export class Editstart extends Component {
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="id">
+                                <Form.Group controlId="StartId">
                                         <Form.Label>Sr. No.</Form.Label>
                                         <Form.Control
                                             type="text"

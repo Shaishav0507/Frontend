@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { ValidatorForm } from 'react-material-ui-form-validator'
-import { Button} from '@mui/material'
+import { Button, Icon} from '@mui/material'
+import { Link } from 'react-router-dom-old/cjs/react-router-dom.min'
 
 const Conatainer = styled.div`
     background: linear-gradient(
@@ -36,7 +37,7 @@ export class GetStarted1 extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: null,
+                StartId: null,
                 fname: event.target.fname.value,
                 lname: event.target.lname.value,
                 business: event.target.business.value,
@@ -240,13 +241,13 @@ export class GetStarted1 extends Component {
                         style={{
                             marginTop: '20px',
                             borderRadius: '50px 50px',
-                            width: '400px',
+                            width: '300px',
                             marginLeft: '30px'
                         }}
                     >
                         Next
                         </Button>
-                    {/* <Button
+                    <Button
                         color="primary"
                         variant="contained"
                         style={{
@@ -255,10 +256,10 @@ export class GetStarted1 extends Component {
                             width: '10px',
                             marginLeft: '30px'
                         }}
-                        onClick={()=>alert("Fill the form dumbass !!s")}
+
                     >   
                         <Link to="/onboarding"><Icon style={{ color:'white', textDecoration: 'none'}}>arrow_right_alt</Icon></Link>
-                        </Button>     */}
+                        </Button>    
                 </ValidatorForm>
             </Conatainer>
         )

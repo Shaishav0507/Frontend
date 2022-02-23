@@ -90,7 +90,7 @@ export class CustomerTable extends Component {
                             <TableCell style={{width: "120px"}}>GST No.</TableCell>
                             <TableCell style={{width: "16%"}}>Email</TableCell>
                             <TableCell style={{width: "110px"}}>PAN</TableCell>
-                            <TableCell style={{width: "92px"}}>Contact No.</TableCell>
+                            <TableCell style={{width: "12s0px"}}>Contact No.</TableCell>
                             <TableCell>Account No.</TableCell>
                             <TableCell>Options</TableCell>
                         </TableRow>
