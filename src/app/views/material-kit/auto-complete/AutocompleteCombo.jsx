@@ -48,7 +48,7 @@ export class AutocompleteCombo extends Component {
                                 class="form-select form-select-lg p-2"
                                 aria-label="form-select-lg example"
                                 style={{
-                                    width: '40%',
+                                    width: '38%',
                                     marginBottom: '16px',
                                     color: 'gray',
                                 }}
@@ -66,7 +66,7 @@ export class AutocompleteCombo extends Component {
                     <Form.Group controlId="Amount">
                         <Form.Control
                             style={{
-                                width: '40%',
+                                width: '38%',
                                 marginBottom: '16px',
                             }}
                             size="lg"
