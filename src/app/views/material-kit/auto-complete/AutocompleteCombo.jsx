@@ -43,30 +43,21 @@ export class AutocompleteCombo extends Component {
                     {...this.props}
                 >
                     <Form.Group controlId="Category">
-                        <div>
-                            <select
-                                class="form-select form-select-lg p-2"
-                                aria-label="form-select-lg example"
-                                style={{
-                                    width: '38%',
-                                    marginBottom: '16px',
-                                    color: 'gray',
-                                }}
-                                name="Category"
-                            >   
-                                <option disabled selected>Expenses</option>
-                                <option>Rent Expenses</option>
-                                <option>Vehicles</option>
-                                <option>Meals and Entertainment</option>
-                                <option>Repairs and Maintenance</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
+                        <Form.Control
+                            style={{
+                                width: '40%',
+                                marginBottom: '16px',
+                            }}
+                            size="lg"
+                            type="text"
+                            placeholder="Category"
+                            name="Category"
+                        />
                     </Form.Group>
                     <Form.Group controlId="Amount">
                         <Form.Control
                             style={{
-                                width: '38%',
+                                width: '40%',
                                 marginBottom: '16px',
                             }}
                             size="lg"
