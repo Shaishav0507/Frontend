@@ -114,18 +114,17 @@ const Layout1Topbar = () => {
                     <StyledIconButton onClick={handleSidebarToggle}>
                         <Icon>menu</Icon>
                     </StyledIconButton>
-
                 </Box>
                 <Box display="flex" alignItems="center">
                     <MatxSearchBox />
-                        <NotificationBar />
+                    <NotificationBar />
 
                     <MatxMenu
                         menuButton={
                             <UserMenu>
                                 <Hidden xsDown>
                                     <Span>
-                                        Hi, <strong>{user.name}</strong>
+                                        Hi <strong>{user.name}</strong>
                                     </Span>
                                 </Hidden>
                                 <Avatar

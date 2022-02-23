@@ -24,7 +24,7 @@ export const navigations = [
             },
             {
                 name: 'Invoices',
-                path: "/invoices",
+                path: '/invoices',
                 iconText: 'B',
             },
             {
@@ -47,7 +47,7 @@ export const navigations = [
     },
     {
         name: 'Pricing Plan',
-        path: '/dashboard/',
+        path: '/prices/',
         icon: 'sell',
     },
     {
