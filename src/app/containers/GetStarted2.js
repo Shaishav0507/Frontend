@@ -54,19 +54,12 @@ const Wrapper = styled.div`
     justify-content: space-between;
 `
 
-// function Welcome(props) {
-//      return <h1>Hello, {props.name}</h1>
-// }
-
 const GetStarted2 = (props) => {
     console.log(props)
     return (
         <Conatainer>
             <Wrapper>
                 <Left>
-                    {/* <div>
-                        <Welcome name="helol" />
-                    </div> */}
                     <h2>
                         Hello,
                         {props.fname}
@@ -95,6 +88,10 @@ const GetStarted2 = (props) => {
                         You can do more later
                     </p>
                     <SearchContainer>
+                    <Link
+                                to="/dashboard/default"
+                                style={{ textDecoration: 'None' }}
+                            >
                         <Button
                             style={{ outline: 'None' }}
                             className="butt"
@@ -128,15 +125,15 @@ const GetStarted2 = (props) => {
                                 />
                             }
                         >
-                            <Link
+                                Send Invoices   
+                        </Button>
+                        </Link>
+                    </SearchContainer>
+                    <SearchContainer>
+                    <Link
                                 to="/dashboard/default"
                                 style={{ textDecoration: 'None' }}
                             >
-                                Send Invoices
-                            </Link>
-                        </Button>
-                    </SearchContainer>
-                    <SearchContainer>
                         <Button
                             style={{ outline: 'None', marginTop: '20px' }}
                             className="butt"
@@ -170,13 +167,11 @@ const GetStarted2 = (props) => {
                                 />
                             }
                         >
-                            <Link
-                                to="/dashboard/default"
-                                style={{ textDecoration: 'None' }}
-                            >
+                            
                                 File GST Return
-                            </Link>
+                            
                         </Button>
+                        </Link>
                     </SearchContainer>
                 </Right>
             </Wrapper>

@@ -78,19 +78,19 @@ const Login = ({ login, isAuthenticated }) => {
                         >
                             Login
                         </button>
-                        <button
-                            className="btn btn-primary btn-block"
-                            style={{
-                                borderRadius: '50px 50px',
-                                width: '180px',
-                                marginLeft: '15px',
-                            }}
-                            type="submit"
-                        >
-                            <Link to="/launchpad" style={{ color: 'white' }}>
+                        <Link to="/launchpad" style={{ color: 'white' }}>
+                            <button
+                                className="btn btn-primary btn-block"
+                                style={{
+                                    borderRadius: '50px 50px',
+                                    width: '180px',
+                                    marginLeft: '15px',
+                                }}
+                                type="submit"
+                            >
                                 LaunchPad
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
                     </form>
                 </div>
                 <p className="mt-3">

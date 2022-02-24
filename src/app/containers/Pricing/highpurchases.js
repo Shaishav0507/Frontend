@@ -1,38 +1,32 @@
 const highpurchases = [
     {
         id: 1,
-        type: 'SILVER',
-        money: '$1000/yr',
-        meaning:
-            " 'You can do that!' or 'I feel Strong!' Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym. ",
+        type: 'BASIC PLUS',
+        money: '₹ 599/yr',
+        meaning1: '1 Months return filling ',
+        meaning2: '1 Months personal assitance ',
+        meaning3: 'Includes access to perks ',
+
     },
 
     {
         id: 2,
-        type: 'GOLD',
-        money: '$3000/yr',
-        meaning:
-            'You are in love, sitting on cloud number nine. The romantic emoji with the enamored expression of the face stands for affairs of the heart. ',
+        type: 'STANDARD PLUS',
+        money: '₹ 2999/yr',
+        meaning1: '6 Months return filling ',
+        meaning2: '6 Months personal assitance ',
+        meaning3: 'Includes access to perks ',
     },
 
     {
         id: 3,
-        type: 'PLATINIUM',
-        money: '$5000/yr',
-        meaning:
-            'Smiley sends you a loving kiss that comes from the heart. Amicable, to express affection or with romantic intent, as an expression of love. May weaken a sarcastic response or be a reaction to a rude message. Symbol for flirting and showing gratitude. ',
+        type: 'PREMIUM PLUS',
+        money: '₹ 4999/yr',
+        meaning1: '12 Months return filling ',
+        meaning2: '12 Months personal assitance ',
+        meaning3: 'Includes access to perks ',
     },
-    // {
-    //     id: 4,
-    //     emoji: '😘',
-    //     mane: 'Face Throwing a Kiss',
-    //     meaning:
-    //         'Smiley sends you a loving kiss that comes from the heart. Amicable, to express affection or with romantic intent, as an expression of love. May weaken a sarcastic response or be a reaction to a rude message. Symbol for flirting and showing gratitude. ',
-    // },
 ]
 
 export default highpurchases
-// module.exports = {
-//     purchases,
-//     highpurchaces,
-// }
+

@@ -25,11 +25,17 @@ const Home = () => (
             <p class="lead">Send an Invoice or File GST Return.</p>
             <hr class="my-4" />
             <p>Click the Log In button</p>
-            <Button class="btn btn-primary btn-lg" style={{ borderRadius: '15px' }}>
-            <Link to="/login" style={{ color:'white', textDecoration: 'None' }}>
-                Login
+            <Link
+                to="/login"
+                style={{ color: 'white', textDecoration: 'None' }}
+            >
+                <Button
+                    class="btn btn-primary btn-lg"
+                    style={{ borderRadius: '15px' }}
+                >
+                    Login
+                </Button>
             </Link>
-            </Button>
         </div>
     </div>
 )
