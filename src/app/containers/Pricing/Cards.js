@@ -1,5 +1,6 @@
 import { Button, Card, Icon } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom-old'
 import styled from 'styled-components'
 
 const Type = styled.div``
@@ -78,6 +79,7 @@ const Cards = (props) => {
                 {/* {props.description} */}
             </dd>
 
+            <Link style={{ textDecoration: 'None' }} to='/pricing'>
             <Button
                 color="secondary"
                 variant="contained"
@@ -92,6 +94,7 @@ const Cards = (props) => {
             >
                 Next
             </Button>
+            </Link>
         </Card>
     )
 }

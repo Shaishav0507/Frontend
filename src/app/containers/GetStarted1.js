@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { ValidatorForm } from 'react-material-ui-form-validator'
-import { Button, Icon} from '@mui/material'
+import { Button, Icon } from '@mui/material'
 import { Link } from 'react-router-dom-old/cjs/react-router-dom.min'
 
 const Conatainer = styled.div`
@@ -26,8 +26,7 @@ export class GetStarted1 extends Component {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    
-    
+
     handleSubmit(event) {
         event.preventDefault()
         fetch('http://localhost:8000/api/start/', {
@@ -50,11 +49,10 @@ export class GetStarted1 extends Component {
             .then(
                 (result) => {
                     alert(result)
-                    window.location="/onboarding";
+                    window.location = '/onboarding'
                 },
                 (error) => {
                     alert('Failed')
-                    
                 }
             )
     }
@@ -232,34 +230,41 @@ export class GetStarted1 extends Component {
                             required
                         />
                     </Form.Group>
-                    
+
                     <Button
                         color="primary"
                         variant="contained"
                         type="submit"
-                        
                         style={{
                             marginTop: '20px',
                             borderRadius: '50px 50px',
                             width: '300px',
-                            marginLeft: '30px'
+                            marginLeft: '30px',
                         }}
                     >
                         Next
+                    </Button>
+                    <Link to="/onboarding">
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            style={{
+                                marginTop: '20px',
+                                borderRadius: '50px 50px',
+                                width: '10px',
+                                marginLeft: '30px',
+                            }}
+                        >
+                            <Icon
+                                style={{
+                                    color: 'white',
+                                    textDecoration: 'none',
+                                }}
+                            >
+                                arrow_right_alt
+                            </Icon>
                         </Button>
-                    <Button
-                        color="primary"
-                        variant="contained"
-                        style={{
-                            marginTop: '20px',
-                            borderRadius: '50px 50px',
-                            width: '10px',
-                            marginLeft: '30px'
-                        }}
-
-                    >   
-                        <Link to="/onboarding"><Icon style={{ color:'white', textDecoration: 'none'}}>arrow_right_alt</Icon></Link>
-                        </Button>    
+                    </Link>
                 </ValidatorForm>
             </Conatainer>
         )

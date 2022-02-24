@@ -1,4 +1,4 @@
-import { Box, Card, Container, Grid } from '@mui/material'
+import { Container } from '@mui/material'
 import Cards from './Cards'
 import highpurchases from './highpurchases'
 
@@ -56,7 +56,9 @@ const Pricing = () => {
                             key={highEmojiTerm.id}
                             type={highEmojiTerm.type}
                             money={highEmojiTerm.money}
-                            description={highEmojiTerm.meaning}
+                            meaning1={highEmojiTerm.meaning1}
+                            meaning2={highEmojiTerm.meaning2}
+                            meaning3={highEmojiTerm.meaning3}
                         />
                     ))}
                 </div>

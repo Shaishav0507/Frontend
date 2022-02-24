@@ -18,6 +18,7 @@ import store from './store'
 import { GetStarted1 } from './containers/GetStarted1'
 import GetStarted2 from './containers/GetStarted2'
 import Dashboard from './containers/Dashboard'
+import { GSTForm } from './containers/GSTForm'
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
             <Router>
                 <Layout>
                     <Switch>
+                        <Route exact path="/pricing" component={GSTForm} />
                         <Route exact path="/users" component={start} />
                         <Route exact path="/customers" component={CustomerForm} />
                         <Route exact path="/invoices" component={AppForm} />
