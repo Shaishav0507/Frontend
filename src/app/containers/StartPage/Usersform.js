@@ -37,6 +37,7 @@ export class Usersform extends Component {
             .then(
                 (result) => {
                     alert(result)
+                    window.location.reload(true)
                 },
                 (error) => {
                     alert('Failed')
