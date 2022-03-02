@@ -19,7 +19,7 @@ import GetStarted2 from './containers/GetStarted2'
 import Dashboard from './containers/Dashboard'
 import { GSTForm } from './containers/GSTForm'
 import VendorForn from './views/material-kit/forms/VendorForm'
-import { Addstart } from './views/material-kit/forms/Addstart'
+import Addstart from './views/material-kit/forms/Addstart'
 import AppAutoComplete from './views/material-kit/auto-complete/AppAutoComplete'
 
 const App = () => {
