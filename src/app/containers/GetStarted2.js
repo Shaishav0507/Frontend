@@ -131,7 +131,7 @@ const GetStarted2 = (props) => {
                     </SearchContainer>
                     <SearchContainer>
                     <Link
-                                to="/dashboard/default"
+                                to="/prices/"
                                 style={{ textDecoration: 'None' }}
                             >
                         <Button

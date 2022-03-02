@@ -27,6 +27,7 @@ export class AutocompleteCombo extends Component {
             .then(
                 (result) => {
                     alert(result)
+                    window.location.reload(true)
                 },
                 (error) => {
                     alert('Failed')

@@ -2,8 +2,8 @@ import { Box } from '@mui/material'
 import { SimpleCard } from 'app/components'
 import React, { Component } from 'react'
 // import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
-import { Usersform } from './Usersform'
-import { Usertable } from './Usertable'
+import { Usersform } from '../forms/Usersform'
+import { Usertable } from '../tables/Usertable'
 
 export class Addstart extends Component {
     constructor(props) {

@@ -47,7 +47,7 @@ const StatCards = (props) => {
                         <Icon className="icon">group</Icon>
                         <Box ml="12px">
                             <Small>TOTAL USERS</Small>
-                            <Heading>{props.count}</Heading>
+                            <Heading></Heading>
                         </Box>
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
