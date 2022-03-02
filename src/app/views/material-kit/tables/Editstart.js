@@ -28,6 +28,7 @@ export class Editstart extends Component {
             .then(
                 (result) => {
                     alert(result)
+                    window.location.reload(true)
                 },
                 (error) => {
                     alert('Failed')
@@ -39,6 +40,7 @@ export class Editstart extends Component {
         return (
             <div className="container">
                 <Modal
+               
                     {...this.props}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
@@ -52,19 +54,20 @@ export class Editstart extends Component {
                     <Modal.Body>
                         <Row>
                             <Col sm={6}>
-                                <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="StartId">
-                                        <Form.Label>Sr. No.</Form.Label>
+                                <Form onSubmit={this.handleSubmit} >
+                                <Form.Group controlId="StartId" >
+                                        <Form.Label ><b>Sr. No.</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="id"
+                                            
                                             required
                                             defaultValue={this.props.id}
                                             placeholder="ID"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="fname">
-                                        <Form.Label>First Name</Form.Label>
+                                    <Form.Group controlId="fname"  >
+                                        <Form.Label ><b>First Name</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="fame"
@@ -74,7 +77,7 @@ export class Editstart extends Component {
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="lname">
-                                        <Form.Label>Last Name</Form.Label>
+                                        <Form.Label><b>Last Name</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="lname"
@@ -84,7 +87,7 @@ export class Editstart extends Component {
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="business">
-                                        <Form.Label>Business</Form.Label>
+                                        <Form.Label><b>Business</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="business"
@@ -94,7 +97,7 @@ export class Editstart extends Component {
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="address">
-                                        <Form.Label>Address</Form.Label>
+                                        <Form.Label><b>Address</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="address"
@@ -104,7 +107,7 @@ export class Editstart extends Component {
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="state">
-                                        <Form.Label>State</Form.Label>
+                                        <Form.Label><b>State</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="state"
@@ -114,7 +117,7 @@ export class Editstart extends Component {
                                         />
                                     </Form.Group>
                                     <Form.Group controlId="code">
-                                        <Form.Label>State Code</Form.Label>
+                                        <Form.Label><b>State Code</b></Form.Label>
                                         <Form.Control
                                             type="text"
                                             name="code"
@@ -125,7 +128,7 @@ export class Editstart extends Component {
                                     </Form.Group>
 
                                     <Form.Group>
-                                        <Button variant="primary" type="submit">
+                                        <Button variant="primary" type="submit" style={{marginTop: "10px", width: "100px"}}>
                                             Update
                                         </Button>
                                     </Form.Group>

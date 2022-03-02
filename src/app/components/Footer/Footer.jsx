@@ -51,7 +51,7 @@ const Footer = () => {
                         <Paragraph sx={{ m: 0 }}>
                             ©{new Date().getFullYear()}
                             &nbsp; Design and Developed by ❤️{' '}
-                            <a href="http://ui-lib.com">Psyber Infc</a>
+                            <a href="https://psyber.co/" style={{textDecoration: "none"}}>Psyber Infc</a>
                         </Paragraph>
                     </FooterContent>
                 </AppFooter>

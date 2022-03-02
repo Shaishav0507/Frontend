@@ -6,7 +6,7 @@ const AppTable = Loadable(lazy(() => import('./tables/AppTable')))
 const InvForm = Loadable(lazy(() => import('./forms/AppForm')))
 const CustForm = Loadable(lazy(() => import('./forms/CustomerForm')))
 const VenForm = Loadable(lazy(() => import('./forms/VendorForm')))
-const AppButton = Loadable(lazy(() => import('./forms/Addstart')))
+const AppUsers = Loadable(lazy(() => import('./forms/Addstart')))
 const AppIcon = Loadable(lazy(() => import('./icons/AppIcon')))
 const AppProgress = Loadable(lazy(() => import('./AppProgress')))
 // const AppCheckbox = Loadable(lazy(() => import("./checkbox/AppCheckbox")));
@@ -26,7 +26,7 @@ const materialRoutes = [
     },
     {
         path: '/users',
-        element: <AppButton />,
+        element: <AppUsers />,
     },
     {
         path: '/expenses',

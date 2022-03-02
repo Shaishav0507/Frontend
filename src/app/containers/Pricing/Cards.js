@@ -5,10 +5,13 @@ import styled from 'styled-components'
 
 const Type = styled.div``
 const Money = styled.div``
+
+
 const Cards = (props) => {
+
     return (
         <Card
-            style={{ height: '300px', width: '900px' }}
+            style={{ height: '300px', width: '900px', marginTop: "25px" }}
             sx={{ px: 2, py: 2, mb: 3 }}
         >
             <dt>
@@ -81,15 +84,15 @@ const Cards = (props) => {
 
             <Link style={{ textDecoration: 'None' }} to='/pricing'>
             <Button
-                color="secondary"
                 variant="contained"
                 type="submit"
                 style={{
                     marginTop: '20px',
                     borderRadius: '50px 50px',
                     width: '250px',
-
-                    marginLeft: '16px',
+                    backgroundColor: "darkblue",
+                    
+                    marginLeft: '30px',
                 }}
             >
                 Next

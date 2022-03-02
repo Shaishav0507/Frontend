@@ -13,6 +13,7 @@ const ListLabel = styled(Paragraph)(({ theme, mode }) => ({
     marginLeft: '15px',
     marginBottom: '10px',
     textTransform: 'uppercase',
+    textDecoration: 'none',
     display: mode === 'compact' && 'none',
     color: theme.palette.text.secondary,
 }))
@@ -29,9 +30,11 @@ const ExtAndIntCommon = {
     transition: 'all 150ms ease-in',
     '&:hover': {
         background: 'rgba(255, 255, 255, 0.08)',
+        textDecoration: 'none',
     },
     '&.compactNavItem': {
         overflow: 'hidden',
+        textDecoration: 'none',
         justifyContent: 'center !important',
     },
     '& .icon': {
@@ -43,14 +46,18 @@ const ExtAndIntCommon = {
 }
 const ExternalLink = styled('a')(({ theme }) => ({
     ...ExtAndIntCommon,
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
+    textDecoration: 'none',
+
 }))
 
 const InternalLink = styled(Box)(({ theme }) => ({
     '& a': {
         ...ExtAndIntCommon,
         color: theme.palette.text.primary,
+        textDecoration: 'none',
     },
+
     '& .navItemActive': {
         backgroundColor: 'rgba(255, 255, 255, 0.16)',
     },
@@ -60,6 +67,7 @@ const StyledText = styled(Span)(({ mode }) => ({
     fontSize: '0.875rem',
     paddingLeft: '0.8rem',
     display: mode === 'compact' && 'none',
+    textDecoration: 'none',
 }))
 
 // const BulletIcon = styled('div')(({ theme }) => ({
@@ -70,6 +78,7 @@ const BadgeValue = styled('div')(() => ({
     padding: '1px 8px',
     overflow: 'hidden',
     borderRadius: '300px',
+    textDecoration: 'none',
 }))
 
 const MatxVerticalNav = ({ items }) => {
@@ -121,7 +130,7 @@ const MatxVerticalNav = ({ items }) => {
                                     )
                                 } else {
                                     return (
-                                        <span className="item-icon icon-text">
+                                        <span className="item-icon icon-text text-decoration-none">
                                             {item.iconText}
                                         </span>
                                     )
