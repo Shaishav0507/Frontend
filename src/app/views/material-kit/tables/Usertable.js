@@ -173,6 +173,7 @@ export class Usertable extends Component {
                     component="div"
                     count={deps.length}
                     rowsPerPage={this.rowsPerPage}
+                    style={{display: 'none'}}
                     page={this.page}
                     backIconButtonProps={{
                         'aria-label': 'Previous Page',

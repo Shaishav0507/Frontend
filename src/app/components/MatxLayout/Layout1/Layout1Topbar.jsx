@@ -135,15 +135,21 @@ const Layout1Topbar = () => {
                         }
                     >
                         <StyledItem>
-                            <Link to="/">
+                            <Link to="/dashboard/default">
                                 <Icon> home </Icon>
                                 <Span> Home </Span>
                             </Link>
                         </StyledItem>
-                        <StyledItem onClick={logout}>
+                        {/* <StyledItem>
+                            <Link to="/">
+                                <Icon> home </Icon>
+                                <Span> Logout </Span>
+                            </Link>
+                        </StyledItem> */}
+                        {/* <StyledItem onClick={logout}>
                             <Icon> power_settings_new </Icon>
                             <Span> Logout </Span>
-                        </StyledItem>
+                        </StyledItem> */}
                     </MatxMenu>
                 </Box>
             </TopbarContainer>

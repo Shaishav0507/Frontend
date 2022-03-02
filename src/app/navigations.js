@@ -59,11 +59,6 @@ export const navigations = [
         icon: 'security',
         children: [
             {
-                name: 'Sign in',
-                iconText: 'SI',
-                path: '/session/signin',
-            },
-            {
                 name: 'Sign up',
                 iconText: 'SU',
                 path: '/session/signup',

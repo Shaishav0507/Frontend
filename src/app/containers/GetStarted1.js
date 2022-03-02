@@ -84,7 +84,7 @@ export class GetStarted1 extends Component {
                             <Form.Control
                                 //  className=" mb-2 p-2"
                                 style={{
-                                    width: '80%',
+                                    width: '85%',
                                     marginBottom: '16px',
                                     borderRadius: '20px',
                                     marginTop: '5px',
@@ -101,7 +101,6 @@ export class GetStarted1 extends Component {
                                 style={{
                                     width: '80%',
                                     marginBottom: '16px',
-                                    // marginLeft: '5px',
                                     borderRadius: '20px',
                                     marginTop: '5px',
                                 }}
