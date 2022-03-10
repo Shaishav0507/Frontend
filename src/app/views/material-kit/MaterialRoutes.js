@@ -15,9 +15,7 @@ const AppSwitch = Loadable(lazy(() => import('./switch/AppSwitch')))
 const AppAutoComplete = Loadable(
     lazy(() => import('./auto-complete/AppAutoComplete'))
 )
-const AppExpansionPanel = Loadable(
-    lazy(() => import('./expansion-panel/AppExpansionPanel'))
-)
+
 
 const materialRoutes = [
     {
@@ -59,10 +57,6 @@ const materialRoutes = [
     {
         path: '/prices/',
         element: <Pricing />,
-    },
-    {
-        path: '/material/expansion-panel',
-        element: <AppExpansionPanel />,
     },
 ]
 
