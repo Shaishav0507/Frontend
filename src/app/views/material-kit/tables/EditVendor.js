@@ -8,7 +8,7 @@ export class EditVendor extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/vendor/', {
+        fetch(`${process.env.REACT_APP_API_URL}/vendor/`, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',

@@ -41,7 +41,7 @@ export class CustomerTable extends Component {
     }
 
     refreshList() {
-        fetch('http://localhost:8000/customer/')
+        fetch(`${process.env.REACT_APP_API_URL}/customer/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -53,7 +53,7 @@ export class CustomerTable extends Component {
     }
     deleteDep(CustomerId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/customer/' + CustomerId, {
+            fetch(`${process.env.REACT_APP_API_URL}/customer/` + CustomerId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',

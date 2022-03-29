@@ -45,7 +45,7 @@ export class Usertable extends Component {
     }
 
     refreshList() {
-        fetch('http://localhost:8000/api/start/')
+        fetch(`${process.env.REACT_APP_API_URL}/api/start/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -57,7 +57,7 @@ export class Usertable extends Component {
     }
     deleteDep(StartId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/api/start/' + StartId, {
+            fetch(`${process.env.REACT_APP_API_URL}/api/start/` + StartId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',
@@ -93,7 +93,7 @@ export class Usertable extends Component {
 
         return (
             <>
-                <Box width="120%" overflow="auto">
+                <Box width="100%" overflow="auto">
                     <StyledTable>
                         <TableHead>
                             <TableRow>

@@ -8,7 +8,7 @@ export class Editstart extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/api/start/', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/start/`, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',

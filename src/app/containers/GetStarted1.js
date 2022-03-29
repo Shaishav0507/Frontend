@@ -29,7 +29,7 @@ export class GetStarted1 extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/api/start/', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/start/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -243,7 +243,7 @@ export class GetStarted1 extends Component {
                     >
                         Next
                     </Button>
-                    <Link to="/onboarding">
+                    {/* <Link to="/onboarding">
                         <Button
                             color="primary"
                             variant="contained"
@@ -263,7 +263,7 @@ export class GetStarted1 extends Component {
                                 arrow_right_alt
                             </Icon>
                         </Button>
-                    </Link>
+                    </Link> */}
                 </ValidatorForm>
             </Conatainer>
         )

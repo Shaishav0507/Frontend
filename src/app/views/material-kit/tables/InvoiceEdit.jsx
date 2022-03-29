@@ -9,11 +9,11 @@ export class InvoiceEdit extends Component{
     }
 
     photo = "anonymous.png";
-    imagesrc = 'http://localhost:8000/media/' + this.photo;
+    imagesrc = `${process.env.REACT_APP_API_URL}/media/` + this.photo;
 
     handleSubmit(event){
         event.preventDefault();
-        fetch('http://localhost:8000/invoice/',{
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/`,{
             method:'PUT',
             headers:{
                 'Accept':'application/json',
@@ -49,13 +49,13 @@ export class InvoiceEdit extends Component{
             event.target.files[0].name
         );
 
-        fetch('http://localhost:8000/invoice/SaveFile',{
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/SaveFile`,{
             method:'POST',
             body:formData
         })
         .then(res=>res.json())
         .then((result)=>{
-            this.imagesrc='http://localhost:8000/media/'+result;
+            this.imagesrc=`${process.env.REACT_APP_API_URL}/media/`+result;
         },
         (error)=>{
             alert('Failed');
@@ -142,7 +142,7 @@ centered
 
             <Col sm={6}>
                 <Image width="200px" height="200px" 
-                src={'http://localhost:8000/media/'+this.props.photo}/>
+                src={`${process.env.REACT_APP_API_URL}/media/`+this.props.photo}/>
                 <input onChange={this.handleFileSelected} type="File"/>
             </Col>
         </Row>

@@ -42,7 +42,7 @@ export class PaginationTable extends Component {
     }
 
     refreshList() {
-        fetch('http://localhost:8000/invoice/')
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -54,7 +54,7 @@ export class PaginationTable extends Component {
     }
     deleteDep(VendorId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/invoice/' + VendorId, {
+            fetch(`${process.env.REACT_APP_API_URL}/invoice/` + VendorId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',

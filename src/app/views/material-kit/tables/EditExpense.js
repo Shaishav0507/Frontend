@@ -8,7 +8,7 @@ export class EditExpense extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/expense/', {
+        fetch(`${process.env.REACT_APP_API_URL}/expense/`, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',

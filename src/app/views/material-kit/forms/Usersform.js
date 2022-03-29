@@ -17,7 +17,7 @@ export class Usersform extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/api/start/', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/start/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

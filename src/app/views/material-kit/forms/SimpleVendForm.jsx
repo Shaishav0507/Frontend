@@ -17,7 +17,7 @@ export class SimpleVendForm extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/vendor/', {
+        fetch(`${process.env.REACT_APP_API_URL}/vendor/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

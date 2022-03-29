@@ -8,7 +8,7 @@ export class EditInvoice extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/invoice/', {
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/`, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',
