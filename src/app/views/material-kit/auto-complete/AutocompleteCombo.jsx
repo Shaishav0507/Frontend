@@ -26,11 +26,12 @@ export class AutocompleteCombo extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
-                    window.location.reload(true)
+                    // alert(result)
+                    window.location='/expenses/'
+                    
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }

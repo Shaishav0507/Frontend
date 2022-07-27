@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
 
-export class EditInvoice extends Component {
+export class EditEstimate extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch(`${process.env.REACT_APP_API_URL}/invoice/`, {
+        fetch(`${process.env.REACT_APP_API_URL}/estimate/`, {
             method: 'PUT',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                InvoiceId: event.target.InvoiceId.value,
-                Name: event.target.Name.value,
-                Invoice_no: event.target.Invoice_no.value,
-                Invoice_Date: event.target.Invoice_Date.value,
-                Payment_Date: event.target.Payment_Date.value,
-                Amount: event.target.Amount.value,
+                EstimateId: event.target.EstimateId.value,
+                EstimateNo: event.target.EstimateNo.value,
+                Create: event.target.Create.value,
+                Update: event.target.Update.value,
+                Item: event.target.Item.value,
+                Price: event.target.Price.value,
             }),
         })
             .then((res) => res.json())
@@ -53,7 +53,7 @@ export class EditInvoice extends Component {
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="InvoiceId">
+                                <Form.Group controlId="EstimateId">
                                         <Form.Label>Sr. No.</Form.Label>
                                         <Form.Control
                                             type="text"
@@ -63,58 +63,59 @@ export class EditInvoice extends Component {
                                             placeholder="ID"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="Name">
-                                        <Form.Label>Name</Form.Label>
+                                    <Form.Group controlId="EstimateNo">
+                                        <Form.Label>EstimateNo</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Name"
+                                            name="EstimateNo"
                                             required
-                                            defaultValue={this.props.name}
-                                            placeholder="Name"
+                                            defaultValue={this.props.no}
+                                            placeholder="EstimateNo"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="Invoice_no">
-                                        <Form.Label>Invoice No.</Form.Label>
+                                    <Form.Group controlId="Create">
+                                        <Form.Label>Create</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Invoice_no"
+                                            name="create"
                                             required
-                                            defaultValue={this.props.ino}
-                                            placeholder="Invoice No."
+                                            defaultValue={this.props.create}
+                                            placeholder="Create"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="Inoice_Date">
-                                        <Form.Label>Invoice Date</Form.Label>
+                                    <Form.Group controlId="Update">
+                                        <Form.Label>Update</Form.Label>
                                         <Form.Control
-                                            type="date"
-                                            name="Invoice_Date"
+                                            type="text"
+                                            name="Update"
                                             required
-                                            defaultValue={this.props.idate}
-                                            placeholder="Invoice Date"
+                                            defaultValue={this.props.update}
+                                            placeholder="Update"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="Payment_Date">
-                                        <Form.Label>Payment Date</Form.Label>
+                                    <Form.Group controlId="Item">
+                                        <Form.Label>Item</Form.Label>
                                         <Form.Control
-                                            type="date"
-                                            name="Payment_Date"
+                                            type="text"
+                                            name="Item"
                                             required
-                                            defaultValue={this.props.payment}
-                                            placeholder="Payment_Date"
+                                            defaultValue={this.props.item}
+                                            placeholder="Item"
                                         />
                                     </Form.Group>
-                                    <Form.Group controlId="Amount">
-                                        <Form.Label>Amount</Form.Label>
+                                    <Form.Group controlId="Price">
+                                        <Form.Label>Price</Form.Label>
                                         <Form.Control
-                                            type="number"
-                                            name="Amount"
+                                            type="text"
+                                            name="Price"
                                             required
-                                            defaultValue={this.props.amount}
-                                            placeholder="Amount"
+                                            defaultValue={this.props.price}
+                                            placeholder="Price"
                                         />
                                     </Form.Group>
+
                                     <Form.Group>
-                                        <Button variant="primary" type="submit">
+                                        <Button variant="primary" type="submit" style={{ marginTop: '10px' }}>
                                             Update
                                         </Button>
                                     </Form.Group>

@@ -7,14 +7,14 @@ const InvForm = Loadable(lazy(() => import('./forms/AppForm')))
 const CustForm = Loadable(lazy(() => import('./forms/CustomerForm')))
 const VenForm = Loadable(lazy(() => import('./forms/VendorForm')))
 const AppUsers = Loadable(lazy(() => import('./forms/Addstart')))
-const AppIcon = Loadable(lazy(() => import('./icons/AppIcon')))
-const AppProgress = Loadable(lazy(() => import('./AppProgress')))
+const EstiForm = Loadable(lazy(() => import('./forms/EstimateForm')))
 // const AppCheckbox = Loadable(lazy(() => import("./checkbox/AppCheckbox")));
 const AppSwitch = Loadable(lazy(() => import('./switch/AppSwitch')))
 // const AppSlider = Loadable(lazy(() => import("./slider/AppSlider")));
 const AppAutoComplete = Loadable(
     lazy(() => import('./auto-complete/AppAutoComplete'))
 )
+
 
 
 const materialRoutes = [
@@ -31,14 +31,6 @@ const materialRoutes = [
         element: <AppAutoComplete />,
     },
     {
-        path: '/material/icons',
-        element: <AppIcon />,
-    },
-    {
-        path: '/material/progress',
-        element: <AppProgress />,
-    },
-    {
         path: '/vendors',
         element: <VenForm />,
     },
@@ -49,6 +41,10 @@ const materialRoutes = [
     {
         path: '/customers',
         element: <CustForm />,
+    },
+    {
+        path: '/estimates',
+        element: <EstiForm />,
     },
     {
         path: '/material/switch',

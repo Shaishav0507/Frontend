@@ -70,7 +70,7 @@ const StatCards = (props) => {
                     </ContentBox>
                     <Tooltip title="View Details" placement="top">
                         <IconButton>
-                            <Link to="/">
+                            <Link to="/estimates">
                                 <Icon>arrow_right_alt</Icon>
                             </Link>
                         </IconButton>

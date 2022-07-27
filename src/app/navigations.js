@@ -19,7 +19,7 @@ export const navigations = [
         children: [
             {
                 name: 'Estimates',
-                path: '/material/autocomplete',
+                path: '/estimates',
                 iconText: 'A',
             },
             {

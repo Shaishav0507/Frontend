@@ -10,28 +10,26 @@ import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { ValidatorForm} from 'react-material-ui-form-validator'
 
-export class SimpleVendForm extends Component {
+export class SimpleEstiForm extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch(`${process.env.REACT_APP_API_URL}/vendor/`, {
+        fetch(`${process.env.REACT_APP_API_URL}/estimate/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                VendorId: null,
-                Name: event.target.Name.value,
-                Address: event.target.Address.value,
-                GST: event.target.GST.value,
-                Email: event.target.Email.value,
-                Pan: event.target.Pan.value,
-                Contact: event.target.Contact.value,
-                Bank:event.target.Bank.value,
+                EstimateId: null,
+                EstimateNo: event.target.EstimateNo.value,
+                Create: event.target.Create.value,
+                Update: event.target.Update.value,
+                Item: event.target.Item.value,
+                Price: event.target.Price.value,
             }),
         })
             .then((res) => res.json())
@@ -57,7 +55,7 @@ export class SimpleVendForm extends Component {
                 >
                     <Grid container spacing={6}>
                         <Grid item lg={6} md={4} sm={12} xs={12} sx={{ mt: 2 }}>
-                            <Form.Group controlId="Name">
+                            <Form.Group controlId="EstimateNo">
                                 <Form.Control
                                     //  className=" mb-2 p-2"
                                     style={{
@@ -66,11 +64,11 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="Name"
+                                    placeholder="EstimateNo"
                                     name="Name"
                                 />
                             </Form.Group>
-                            <Form.Group controlId="Address">
+                            <Form.Group controlId="Create">
                                 <Form.Control
                                     style={{
                                         width: '100%',
@@ -78,12 +76,12 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="Address"
-                                    name="Address"
+                                    placeholder="Create"
+                                    name="Create"
                                 />
                                 
                             </Form.Group>
-                            <Form.Group controlId="GST">
+                            <Form.Group controlId="Update">
                                 <Form.Control
                                     style={{
                                         width: '100%',
@@ -91,8 +89,8 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="GST"
-                                    name="GST"
+                                    placeholder="Update"
+                                    name="Update"
                                 />
                                 
                             </Form.Group>
@@ -103,7 +101,7 @@ export class SimpleVendForm extends Component {
                         </Grid>
 
                         <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-                            <Form.Group controlId="Email">
+                            <Form.Group controlId="Item">
                                 <Form.Control
                                     style={{
                                         width: '100%',
@@ -111,13 +109,13 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="Email"
-                                    name="Email"
+                                    placeholder="Item"
+                                    name="Item"
                                 />
                                 
                             </Form.Group>
                             
-                            <Form.Group controlId="Pan">
+                            <Form.Group controlId="Price">
                                 <Form.Control
                                     style={{
                                         width: '100%',
@@ -125,34 +123,8 @@ export class SimpleVendForm extends Component {
                                     }}
                                     size="lg"
                                     type="text"
-                                    placeholder="PAN No."
-                                    name="Pan"
-                                />
-                                
-                            </Form.Group>
-                            <Form.Group controlId="Contact">
-                                <Form.Control
-                                    style={{
-                                        width: '100%',
-                                        marginBottom: '16px',
-                                    }}
-                                    size="lg"
-                                    type="text"
-                                    placeholder="Contact"
-                                    name="Contact"
-                                />
-                                
-                            </Form.Group>
-                            <Form.Group controlId="Bank">
-                                <Form.Control
-                                    style={{
-                                        width: '100%',
-                                        marginBottom: '16px',
-                                    }}
-                                    size="lg"
-                                    type="text"
-                                    placeholder="Account Number"
-                                    name="Banks"
+                                    placeholder="Price"
+                                    name="Price"
                                 />
                                 
                             </Form.Group>
@@ -166,7 +138,7 @@ export class SimpleVendForm extends Component {
                     >
                         <Icon>add</Icon>
                         <Span sx={{ pl: 1, textTransform: 'capitalize' }}>
-                            Add Vendor
+                            Add Estimate
                         </Span>
                     </Button>
                 </ValidatorForm>

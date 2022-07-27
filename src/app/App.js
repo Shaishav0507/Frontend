@@ -20,6 +20,7 @@ import Dashboard from './containers/Dashboard'
 import { GSTForm } from './containers/GSTForm'
 import VendorForn from './views/material-kit/forms/VendorForm'
 import Addstart from './views/material-kit/forms/Addstart'
+import EstimateForm from './views/material-kit/forms/EstimateForm'
 import AppAutoComplete from './views/material-kit/auto-complete/AppAutoComplete'
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                         <Route exact path="/users" component={Addstart} />
                         <Route exact path="/expenses" component={AppAutoComplete} />
                         <Route exact path="/customers" component={CustomerForm} />
+                        <Route exact path="/estimates" component={EstimateForm} />
                         <Route exact path="/invoices" component={AppForm} />
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />

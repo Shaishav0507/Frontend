@@ -1,9 +1,8 @@
 import React from 'react'
-import { SimpleVendForm } from './SimpleVendForm'
-import { VendorTable } from './../tables/VendorTable'
 import { SimpleCard } from 'app/components'
 import { Box, styled } from '@mui/system'
-
+import { SimpleEstiForm } from './SimpleEstiForm'
+import { EstimateTable } from '../tables/EstimateTable'
 // import { Button, Icon } from '@mui/material'
 // import { Span } from 'app/components/Typography'
 // import { Link } from 'react-router-dom-old'
@@ -21,18 +20,18 @@ const Container = styled('div')(({ theme }) => ({
     },
 }))
 
-const VendorForm = () => {
+const CustomerForm = () => {
     return (
         <Container>
-            <SimpleCard title="Create Vendor">
-                <SimpleVendForm />
+            <SimpleCard title="Create Estimate">
+                <SimpleEstiForm />
             </SimpleCard>
             <Box py="12px" />
-            <SimpleCard title="Current Vendors">
-                <VendorTable />
+            <SimpleCard title="Current Estimates">
+                <EstimateTable />
             </SimpleCard>
         </Container>
     )
 }
 
-export default VendorForm
+export default CustomerForm

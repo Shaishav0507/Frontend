@@ -31,10 +31,10 @@ export class InvoiceEdit extends Component{
         })
         .then(res=>res.json())
         .then((result)=>{
-            alert(result);
+            //alert(result);
         },
         (error)=>{
-            alert('Failed');
+            //alert('Failed');
         })
     }
 
@@ -58,7 +58,7 @@ export class InvoiceEdit extends Component{
             this.imagesrc=`${process.env.REACT_APP_API_URL}/media/`+result;
         },
         (error)=>{
-            alert('Failed');
+            //alert('Failed');
         })
         
     }
