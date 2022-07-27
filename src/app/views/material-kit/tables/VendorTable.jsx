@@ -41,7 +41,7 @@ export class VendorTable extends Component {
     }
 
     refreshList() {
-        fetch('http://localhost:8000/vendor/')
+        fetch(`${process.env.REACT_APP_API_URL}/vendor/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -53,7 +53,7 @@ export class VendorTable extends Component {
     }
     deleteDep(VendorId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/vendor/' + VendorId, {
+            fetch(`${process.env.REACT_APP_API_URL}/vendor/` + VendorId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',

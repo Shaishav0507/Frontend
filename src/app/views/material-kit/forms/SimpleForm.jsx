@@ -9,11 +9,11 @@ export class SimpleForm extends Component {
     }
 
     photoname = 'anonymous.png'
-    imagesrc = 'http://localhost:8000/media/' + this.photoname
+    imagesrc = `${process.env.REACT_APP_API_URL}/media/` + this.photoname
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/invoice/', {
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -32,10 +32,10 @@ export class SimpleForm extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
+                    //alert(result)
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }
@@ -50,17 +50,17 @@ export class SimpleForm extends Component {
             event.target.files[0].name
         )
 
-        fetch('http://localhost:8000/invoice/SaveFile/', {
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/SaveFile/`, {
             method: 'POST',
             body: formData,
         })
             .then((res) => res.json())
             .then(
                 (result) => {
-                    this.imagesrc = 'http://localhost:8000/media/' + result
+                    this.imagesrc = `${process.env.REACT_APP_API_URL}/media/` + result
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }

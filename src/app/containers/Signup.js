@@ -13,10 +13,9 @@ const Signup = ({ signup, isAuthenticated }) => {
         email: '',
         password: '',
         re_password: '',
-        phone: '',
     })
 
-    const { name, email, password, re_password, phone } = formData
+    const { name, email, password, re_password } = formData
 
     const onChange = (e) =>
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -25,7 +24,7 @@ const Signup = ({ signup, isAuthenticated }) => {
         e.preventDefault()
 
         if (password === re_password) {
-            signup(name, email, password, re_password, phone)
+            signup(name, email, password, re_password)
             setAccountCreated(true)
         }
     }
@@ -90,18 +89,6 @@ const Signup = ({ signup, isAuthenticated }) => {
                             placeholder="Email"
                             name="email"
                             value={email}
-                            style={{ borderRadius:'15px'}}
-                            onChange={(e) => onChange(e)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Phone Number"
-                            name="phone"
-                            value={phone}
                             style={{ borderRadius:'15px'}}
                             onChange={(e) => onChange(e)}
                             required

@@ -41,7 +41,7 @@ export class ExpenseTable extends Component {
     }
 
     refreshList() {
-        fetch('http://localhost:8000/expense/')
+        fetch(`${process.env.REACT_APP_API_URL}/expense/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -53,7 +53,7 @@ export class ExpenseTable extends Component {
     }
     deleteDep(ExpenseId) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:8000/expense/' + ExpenseId, {
+            fetch(`${process.env.REACT_APP_API_URL}/expense/` + ExpenseId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',

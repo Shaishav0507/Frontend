@@ -17,7 +17,7 @@ export class InvoicesForm extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/invoice/', {
+        fetch(`${process.env.REACT_APP_API_URL}/invoice/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -36,11 +36,11 @@ export class InvoicesForm extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
+                    //alert(result)
                     window.location.reload(true)
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }

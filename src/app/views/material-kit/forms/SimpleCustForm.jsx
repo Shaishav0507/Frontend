@@ -17,7 +17,7 @@ export class SimpleCustForm extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/customer/', {
+        fetch(`${process.env.REACT_APP_API_URL}/customer/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -37,11 +37,11 @@ export class SimpleCustForm extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
+                    //alert(result)
                     window.location.reload(true)
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }

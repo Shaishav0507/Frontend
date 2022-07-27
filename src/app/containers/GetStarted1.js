@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { ValidatorForm } from 'react-material-ui-form-validator'
-import { Button, Icon } from '@mui/material'
-import { Link } from 'react-router-dom-old/cjs/react-router-dom.min'
+import { Button} from '@mui/material'
 
 const Conatainer = styled.div`
     background: linear-gradient(
@@ -29,7 +28,7 @@ export class GetStarted1 extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/api/start/', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/start/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -48,11 +47,11 @@ export class GetStarted1 extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
+                    //alert(result)
                     window.location = '/onboarding'
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }
@@ -215,7 +214,7 @@ export class GetStarted1 extends Component {
                         controlId="code"
                         className=" d-flex flex-column"
                     >
-                        <Form.Label>What's your State Code</Form.Label>
+                        <Form.Label>What's your Pin Code</Form.Label>
                         <Form.Control
                             style={{
                                 width: '70%',
@@ -224,7 +223,7 @@ export class GetStarted1 extends Component {
                             }}
                             size="lg"
                             type="text"
-                            placeholder="State Code !!"
+                            placeholder="Pin Code !!"
                             name="Name"
                             required
                         />
@@ -243,7 +242,7 @@ export class GetStarted1 extends Component {
                     >
                         Next
                     </Button>
-                    <Link to="/onboarding">
+                    {/* <Link to="/onboarding">
                         <Button
                             color="primary"
                             variant="contained"
@@ -263,7 +262,7 @@ export class GetStarted1 extends Component {
                                 arrow_right_alt
                             </Icon>
                         </Button>
-                    </Link>
+                    </Link> */}
                 </ValidatorForm>
             </Conatainer>
         )

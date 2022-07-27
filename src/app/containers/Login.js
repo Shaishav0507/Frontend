@@ -78,7 +78,7 @@ const Login = ({ login, isAuthenticated }) => {
                         >
                             Login
                         </button>
-                        <Link to="/launchpad" style={{ color: 'white' }}>
+                        {/* <Link to="/launchpad" style={{ color: 'white' }}>
                             <button
                                 className="btn btn-primary btn-block"
                                 style={{
@@ -90,7 +90,7 @@ const Login = ({ login, isAuthenticated }) => {
                             >
                                 LaunchPad
                             </button>
-                        </Link>
+                        </Link> */}
                     </form>
                 </div>
                 <p className="mt-3">

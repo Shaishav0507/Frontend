@@ -8,9 +8,8 @@ import {
     Icon,
 } from '@mui/material'
 import { Box, styled } from '@mui/system'
-
+import { EditEstimate } from './EditEstimate'
 import { Button, ButtonToolbar } from 'react-bootstrap'
-import { EditInvoice } from './EditInvoice'
 
 const StyledTable = styled(Table)(({ theme }) => ({
     whiteSpace: 'pre',
@@ -35,14 +34,14 @@ const StyledTable = styled(Table)(({ theme }) => ({
     },
 }))
 
-export class PaginationTable extends Component {
+export class EstimateTable extends Component {
     constructor(props) {
         super(props)
         this.state = { deps: [], addStartShow: false, editStartShow: false }
     }
 
     refreshList() {
-        fetch(`${process.env.REACT_APP_API_URL}/invoice/`)
+        fetch(`${process.env.REACT_APP_API_URL}/estimate/`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ deps: data })
@@ -52,9 +51,9 @@ export class PaginationTable extends Component {
     componentDidMount() {
         this.refreshList()
     }
-    deleteDep(VendorId) {
+    deleteDep(EstimateId) {
         if (window.confirm('Are you sure?')) {
-            fetch(`${process.env.REACT_APP_API_URL}/invoice/` + VendorId, {
+            fetch(`${process.env.REACT_APP_API_URL}/estimate/` + EstimateId, {
                 method: 'DELETE',
                 header: {
                     Accept: 'application/json',
@@ -69,12 +68,11 @@ export class PaginationTable extends Component {
         const {
             deps,
             Id,
-            name,
-            ino,
-            idate,
-            payment,
-            amount,
-           
+            no,
+            create,
+            update,
+            item,
+            price,
         } = this.state
         //    let addStartClose = () => this.setState({ addStartShow: false })
         let editStartClose = () => this.setState({ editStartShow: false })
@@ -84,25 +82,24 @@ export class PaginationTable extends Component {
                 <StyledTable style={{tableLayout: "fixed", whiteSpace: "pre"}}>
                     <TableHead>
                         <TableRow>
-                            <TableCell>InvoiceId</TableCell>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Invoice No</TableCell>
-                            <TableCell>Invoice Date</TableCell>
-                            <TableCell>Payment Date</TableCell>
-                            <TableCell>Amount</TableCell>
+                            <TableCell style={{width: "80px"}}>EstimateId</TableCell>
+                            <TableCell style={{width: "12%"}}>EstimateNo</TableCell>
+                            <TableCell style={{width: "12%"}}>Create</TableCell>
+                            <TableCell style={{width: "120px"}}>Update</TableCell>
+                            <TableCell style={{width: "16%"}}>Item</TableCell>
+                            <TableCell style={{width: "110px"}}>Price</TableCell>
                             <TableCell>Options</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {deps.map((dep) => (
-                            <TableRow key={dep.InvoiceId}>
-                                <TableCell>{dep.InvoiceId}</TableCell>
-                                <TableCell>{dep.Name}</TableCell>
-                                <TableCell>{dep.Invoice_no}</TableCell>
-                                <TableCell>{dep.Invoice_Date}</TableCell>
-                                <TableCell>{dep.Payment_Date}</TableCell>
-                                <TableCell>{dep.Amount}</TableCell>
-                                
+                            <TableRow key={dep.EstimateId}>
+                                <TableCell>{dep.EstimateId}</TableCell>
+                                <TableCell>{dep.EstimateNo}</TableCell>
+                                <TableCell>{dep.Create}</TableCell>
+                                <TableCell>{dep.Update}</TableCell>
+                                <TableCell>{dep.Item}</TableCell>
+                                <TableCell>{dep.Price}</TableCell>
                                 <TableCell>
                                     <ButtonToolbar>
                                         <Button
@@ -111,13 +108,12 @@ export class PaginationTable extends Component {
                                             onClick={() =>
                                                 this.setState({
                                                     editStartShow: true,
-                                                    Id: dep.InvoiceId,
-                                                    name: dep.Name,
-                                                    ino: dep.Invoice_no,
-                                                    idate: dep.Invoice_Date,
-                                                    payment: dep.Payment_Date,
-                                                    amount: dep.Amount,
-                                                    
+                                                    Id: dep.EstimateId,
+                                                    no: dep.EstimateNo,
+                                                    create: dep.Create,
+                                                    update: dep.Update,
+                                                    item: dep.Item,
+                                                    price: dep.Price,
                                                 })
                                             }
                                         >
@@ -128,22 +124,21 @@ export class PaginationTable extends Component {
                                             className="mr-2"
                                             variant="danger"
                                             onClick={() =>
-                                                this.deleteDep(dep.InvoiceId)
+                                                this.deleteDep(dep.EstimateId)
                                             }
                                         >
                                             <Icon>delete</Icon>
                                         </Button>
 
-                                        <EditInvoice
+                                        <EditEstimate
                                             show={this.state.editStartShow}
                                             onHide={editStartClose}
                                             Id={Id}
-                                            name={name}
-                                            ino={ino}
-                                            idate={idate}
-                                            payment={payment}
-                                            amount={amount}
-                                           
+                                            no={no}
+                                            create={create}
+                                            update={update}
+                                            item={item}
+                                            price={price}
                                         />
                                     </ButtonToolbar>
                                 </TableCell>

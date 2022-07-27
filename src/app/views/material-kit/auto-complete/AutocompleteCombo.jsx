@@ -11,7 +11,7 @@ export class AutocompleteCombo extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://localhost:8000/expense/', {
+        fetch(`${process.env.REACT_APP_API_URL}/expense/`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -26,11 +26,12 @@ export class AutocompleteCombo extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    alert(result)
-                    window.location.reload(true)
+                    // alert(result)
+                    window.location='/expenses/'
+                    
                 },
                 (error) => {
-                    alert('Failed')
+                    //alert('Failed')
                 }
             )
     }
